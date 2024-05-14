@@ -1,0 +1,209 @@
+.nav {
+  color: #dedcdc;
+  background: var(--nav-background);
+  width: 100vw;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
+  z-index: 10;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+.navWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.leftWrapper {
+  font-family: "Syne Mono";
+  font-size: 1.2rem;
+}
+
+.linkWrapper,
+.iconWrapper,
+.rightWrapper {
+  display: flex;
+  align-items: center;
+}
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+.close {
+  display: none;
+}
+
+.nav > ul {
+  margin: 0 1rem 0 0;
+  display: flex;
+  align-items: center;
+}
+.navLink {
+  display: inline-block;
+  margin: 0 1rem 0 0;
+  font-size: 1rem;
+}
+
+.navLink,
+.nestedParent,
+.nestedLi {
+  font-family: "Syne Mono";
+}
+
+.iconWrapper {
+  font-size: 1.3rem;
+}
+
+.navIcon {
+  position: relative;
+  top: 0.1rem;
+  margin-right: 0.5rem;
+}
+.nav a {
+  color: inherit;
+  text-decoration: none;
+}
+.icon {
+  margin: 0.2rem;
+}
+
+.instagram {
+  margin: 0.2rem;
+  margin-top: 0.35rem;
+}
+
+.user {
+  min-width: 50px;
+}
+.separator {
+  margin-left: 0.5rem;
+  margin-top: -0.3rem;
+}
+.icon:hover,
+.instagram:hover,
+.navLink:hover,
+.navIcon:hover,
+.hamburger:hover,
+.nestedHeading:hover,
+.nestedLi:hover {
+  color: white;
+  transform: scale(102%);
+  cursor: pointer;
+}
+
+.nestedParent {
+  display: inline-block;
+  letter-spacing: 0.2rem;
+  font-size: 1rem;
+  position: relative;
+  margin: 0 1rem 0 0;
+}
+
+.nestedBackground {
+  width: 100vw;
+  background: var(--nav-background);
+  position: fixed;
+  left: 0;
+  top: 50px;
+  height: 0;
+  opacity: 0;
+  transition: height 0.2s;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.arrowUp {
+  position: absolute;
+  left: 4px;
+  top: 23px;
+  border-left: solid 13px transparent;
+  border-right: solid 13px transparent;
+  border-bottom: solid 13px #f3f3f34f;
+  height: 0;
+  width: 0;
+  display: none;
+}
+.nestedLi {
+  display: none;
+  white-space: nowrap;
+  margin: 0.8rem;
+  line-height: 1.3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .linkWrapper {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    background: var(--nav-background);
+    width: 100vw;
+    text-align: center;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.4s;
+  }
+  .open {
+    height: 160px;
+  }
+  .heightFull {
+    height: 240px;
+  }
+
+  .linkWrapper > ul {
+    display: block;
+  }
+  .navLink {
+    display: block;
+    margin: 1rem;
+    font-size: 1.2rem;
+  }
+  .hamburger {
+    display: block;
+  }
+  .nestedParent {
+    display: block;
+    margin: 1rem;
+    font-size: 1.2rem;
+  }
+  .nestedBackground {
+    display: none;
+  }
+  .nestedNav {
+    position: relative;
+    flex-direction: column;
+    left: -15px;
+    top: auto;
+    height: 0;
+    width: 100vw;
+    background: var(--nav-background);
+    transform: translateY(0px);
+    transition: height 0.4s;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .soundRoots {
+    font-size: 0.6rem;
+  }
+  .mentorship {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .mentorship {
+    display: none;
+  }
+  .soundRoots {
+    top: 0.1rem;
+  }
+}
