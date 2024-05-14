@@ -26,6 +26,9 @@ export default function Navbar({ posts }: { posts: Posts[] }) {
           <div className={`${styles.linkWrapper} ${open && styles.open}`}>
             <ul>
               <li className={`${styles.navLink}`}>
+                <Link href='/'>Posts</Link>
+              </li>
+              <li className={`${styles.navLink}`}>
                 <Link href='https://arootroatch-dev.vercel.app'>Portfolio</Link>
               </li>
 
