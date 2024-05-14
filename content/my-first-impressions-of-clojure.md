@@ -45,10 +45,10 @@ if (numOfApples > 4) {
 }
 ```
 
-But in stays short and sweet in Clojure: 
+But it stays short and sweet in Clojure: 
 
 ```
-(if (> num-of-apples 4) "Let's make a pie! "We need more apples...")
+(if (> num-of-apples 4) "Let's make a pie!" "We need more apples...")
 ```
 
 You may be noticing that in that last Clojure example, it seems like I put the greater-than sign in the wrong spot. That brings me to the next topic: 
