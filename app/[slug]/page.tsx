@@ -9,7 +9,6 @@ import PostSidebar from "@/components/PostSidebar";
 import PostScroller from "@/components/PostScroller";
 import getPosts from "@/lib/getPosts";
 import getMostRecentPosts from "@/lib/getMostRecentPosts";
-import GatedContent from "@/components/GatedContent";
 
 export default async function PostPage({
   params,
@@ -67,12 +66,7 @@ export default async function PostPage({
         </header>
         <div className={styles.container}>
           <div className={styles.content}>
-            {gated ? (
-              <GatedContent content={content} />
-            ) : (
               <div className={styles.main}>{content}</div>
-            )}
-
             <PostSidebar pageURL={pageURL} />
           </div>
         </div>
