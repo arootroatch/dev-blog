@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./footer.module.css";
 import Link from "next/link";
-import { FaInstagram, FaSquareFacebook } from "react-icons/fa6";
+import { FaGithub,  FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -12,17 +12,28 @@ export default function Footer() {
           <p>All Rights Reserved</p>
         </div>
         <div>
-          <p><a href="#top" className={styles.top}>Back to top</a></p>
+          <p>
+            <a href='#top' className={styles.top}>
+              Back to top
+            </a>
+          </p>
           <Link
-            href='https://www.facebook.com/soundrootsproductions'
+            href='www.linkedin.com/in/arootroatch'
+            className={styles.navIcon}
           >
-            <FaSquareFacebook className={styles.icon} />
+            <FaLinkedin className={styles.icon} />
           </Link>
           <Link
-            href='https://www.instagram.com/soundrootsproductions/'
-            className='navIcon'
+            href='https://github.com/arootroatch'
+            className={styles.navIcon}
           >
-            <FaInstagram className={styles.icon} />
+            <FaGithub className={styles.icon} />
+          </Link>
+          <Link
+            href='https://twitter.com/ARootRoatch'
+            className={styles.navIcon}
+          >
+            <FaXTwitter className={styles.icon} />
           </Link>
         </div>
       </div>
