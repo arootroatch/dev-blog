@@ -42,6 +42,10 @@
 :global(.dark) .main code, :global(.dark) .main pre code {
   background-color: #8c8c8c32;
 }
+
+.main p {
+  margin: 1rem 0;
+}
 .container {
   width: 100vw;
   position: relative;
