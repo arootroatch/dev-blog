@@ -23,6 +23,24 @@
   scroll-margin-top: 4rem;
 }
 
+.main pre code {
+  display: block;
+  padding: 1rem 1rem;
+  overflow-x: scroll;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.main code {
+  padding: 0.2rem 0.5rem;
+}
+.main code, .main pre code {
+  background-color: #67676729;
+  border-radius: 0.5rem;
+}
+:global(.dark) .main code, :global(.dark) .main pre code {
+  background-color: #8c8c8c32;
+}
 .container {
   width: 100vw;
   position: relative;

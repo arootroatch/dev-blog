@@ -73,14 +73,6 @@
   margin: 0.2rem;
 }
 
-.instagram {
-  margin: 0.2rem;
-  margin-top: 0.35rem;
-}
-
-.user {
-  min-width: 50px;
-}
 .separator {
   margin-left: 0.5rem;
   margin-top: -0.3rem;
@@ -199,11 +191,28 @@
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 436px) {
   .mentorship {
     display: none;
   }
   .soundRoots {
     top: 0.1rem;
   }
+  .leftWrapper {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .navIcon, .icon {
+    margin-right: 0.1rem;
+  }
+  .separator{
+    margin: 0;
+  }
+  .hamburger {
+    margin-left: 0.3rem;
+  }
+
 }

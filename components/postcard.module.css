@@ -17,11 +17,13 @@
 }
 
 .image {
-  height: 50%;
+  height: 40%;
   position: relative;
+  object-fit: cover;
 }
 .info {
   padding: 1rem 2rem;
+  white-space: normal;
 }
 .postcard h3 {
   margin-top: 1rem;

@@ -78,3 +78,9 @@
   font-size: 0.9rem;
   margin-top: 0.5rem;
 }
+
+@media screen and (max-width: 375px) {
+    .search {
+      margin-left: 0.1rem;
+    }
+}

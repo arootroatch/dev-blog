@@ -1,21 +1,16 @@
 import { Posts } from "./interfaces";
 
 const categories = [
-  "Amplifiers",
-  "Digital",
-  "Effects",
-  "Interconnect",
-  "Loudspeakers",
-  "Microphones",
-  "Mixers",
-  "Mixing",
-  "RF Systems",
-  "Science of Sound",
-  "Signal Flow",
-  "Signal Processing",
-  "Soft Skills",
-  "Soundcheck",
-  "Troubleshooting",
+  "Clojure",
+  "ClojureScript",
+  "JavaScript",
+  "Node.js",
+  "Python",
+  "Java",
+  "HTML",
+  "CSS",
+  "React",
+  "Clean Code"
 ];
 
 export default function sortPostsByCategory(posts: Posts[]) {

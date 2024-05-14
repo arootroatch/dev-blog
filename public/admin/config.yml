@@ -35,7 +35,8 @@ collections:
               "Java",
               "HTML",
               "CSS",
-              "React"
+              "React", 
+              "Clean Code"
             ],
         }
       - { label: "Body", name: "body", widget: "markdown" }

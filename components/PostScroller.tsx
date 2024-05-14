@@ -22,7 +22,7 @@ export default function PostScroller({ title, category, allPostsButton }: PostSc
           />
         ))}
       </div>
-      {allPostsButton && <Link href={'/learn'} className={`${styles.btn} btn`}>Browse All Posts</Link>}
+      {allPostsButton && <Link href={'/'} className={`${styles.btn} btn`}>Browse All Posts</Link>}
     </div>
   );
 }
