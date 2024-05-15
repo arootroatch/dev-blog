@@ -11,6 +11,7 @@ export default function PostSidebar({
   pageURL: string;
 }) {
 
+console.log(pageURL);
 
   useEffect(() => {
       const h2Elements = Array.from(document.getElementsByTagName("h2")).slice(

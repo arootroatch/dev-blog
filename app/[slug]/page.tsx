@@ -44,7 +44,7 @@ export default async function PostPage({
   const recent = getMostRecentPosts(posts, 5);
 
   const slug = params.slug;
-  const pageURL = `https://mentorship.soundrootsproductions.com/learn/${slug}`;
+  const pageURL = `https://arootroatch-blog.vercel.app/${slug}`;
 
   return (
     <div>
