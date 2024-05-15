@@ -69,7 +69,6 @@ export default function Navbar({ posts }: { posts: Posts[] }) {
               <FaXTwitter className={styles.icon} />
             </Link>
             <span className={styles.separator}>|</span>
-            <IoCloseOutline className={styles.close} />
             <SearchBar posts={posts} />
             <ThemeButton />
             <Link href='' onClick={toggleMobileNav}>
