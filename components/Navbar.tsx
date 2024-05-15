@@ -13,7 +13,7 @@ export default function Navbar({ posts }: { posts: Posts[] }) {
   const [open, setOpen] = useState(false);
 
 
-  function handleClick() {
+  function toggleMobileNav() {
     setOpen(!open);
   }
 
@@ -26,14 +26,24 @@ export default function Navbar({ posts }: { posts: Posts[] }) {
           <div className={`${styles.linkWrapper} ${open && styles.open}`}>
             <ul>
               <li className={`${styles.navLink}`}>
-                <Link href='/'>Posts</Link>
+                <Link onClick={toggleMobileNav} href='/'>
+                  Posts
+                </Link>
               </li>
               <li className={`${styles.navLink}`}>
-                <Link href='https://arootroatch-dev.vercel.app'>Portfolio</Link>
+                <Link
+                  onClick={toggleMobileNav}
+                  href='https://arootroatch-dev.vercel.app'
+                >
+                  Portfolio
+                </Link>
               </li>
 
               <li className={styles.navLink}>
-                <Link href='https://arootroatch-dev.vercel.app/#contact'>
+                <Link
+                  onClick={toggleMobileNav}
+                  href='https://arootroatch-dev.vercel.app/#contact'
+                >
                   Contact
                 </Link>
               </li>
@@ -62,7 +72,7 @@ export default function Navbar({ posts }: { posts: Posts[] }) {
             <IoCloseOutline className={styles.close} />
             <SearchBar posts={posts} />
             <ThemeButton />
-            <Link href='' onClick={handleClick}>
+            <Link href='' onClick={toggleMobileNav}>
               <RxHamburgerMenu className={styles.hamburger} />
             </Link>
           </div>
