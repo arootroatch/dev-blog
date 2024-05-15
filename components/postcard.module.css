@@ -28,11 +28,11 @@
 .postcard h3 {
   margin-top: 1rem;
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .date,
 .description {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   white-space: normal;
   line-height: 1.2rem;
 }

@@ -24,6 +24,10 @@
   scroll-margin-top: 4rem;
 }
 
+.main a {
+  text-decoration: underline;
+}
+
 .main pre code {
   display: block;
   padding: 1rem 1rem;
@@ -78,7 +82,7 @@
   margin-bottom: 0.5rem;
 }
 
-.sidebar a:hover {
+.sidebar a:hover, .main a:hover {
   cursor: pointer;
   color: #850971;
 }
