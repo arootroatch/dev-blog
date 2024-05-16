@@ -13,8 +13,7 @@
   position: absolute;
   top: 50px;
   right: 0px;
-  font-family: "OPTIAgency-Gothic";
-  letter-spacing: 0.1rem;
+  font-family: "Syne Mono";
   width: 100vw;
   background: var(--nav-background);
   display: flex;
