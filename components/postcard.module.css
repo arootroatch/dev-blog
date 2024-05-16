@@ -9,11 +9,18 @@
   overflow: hidden;
   position: relative;
   box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s;
 }
 
 :global(.dark) .postcard {
   box-shadow: 0 0 0.8rem rgba(255, 255, 255, 0.362);
   border: 0.5px solid rgba(255, 255, 255, 0.431);
+}
+
+.postcard:hover {
+  cursor: pointer;
+  transform: scale(103%);
+  box-shadow: 0 0 0.8rem #850971;;
 }
 
 .image {
