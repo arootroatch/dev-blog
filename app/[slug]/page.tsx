@@ -21,7 +21,7 @@ export default async function PostPage({
     options: { parseFrontmatter: true },
   });
 
-  // console.log(new Date().toISOString());
+  console.log(new Date().toISOString());
 
   const date = new Date(frontmatter.date);
   const formattedDate = date.toLocaleDateString("en-US", {
