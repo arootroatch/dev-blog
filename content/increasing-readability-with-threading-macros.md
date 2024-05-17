@@ -56,7 +56,7 @@ You may have noticed that each of those function calls looked like they're missi
 
 > NOTE: This is a demonstrative example and is NOT an example of good, clean code. This level of nesting is often a good code smell that your function is doing more than one thing and thus breaking the Single Responsibility Principal. Plus, the name of the function `deeply-nested` is a terrible name because it doesn't describe what the function is doing at all. It should be a verb phrase, something like <br/>
 > `setMapValuesAndIncrementLastKeyAndGetLastKeyValue`. <br/>
-> That immediately shows us that the function does too many things at once. Not only that, it's both setting values and getting a value, which violates Command Query Separation. Oh, and the three different `(assoc` calls could have been done in one `assoc`, as it can take multiple key-value pairs.
+> That immediately shows us that the function does too many things at once. Not only that, it's both setting values and getting a value, which violates Command Query Separation. Oh, and the three different `assoc` calls could have been done in one `assoc`, as it can take multiple key-value pairs.
 
 ## Threaded-last
 
