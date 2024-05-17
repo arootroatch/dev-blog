@@ -33,6 +33,7 @@
   background-color: #67676729;
   border-radius: 0.5rem;
   border-left: 5px solid #606060;
+  word-break: break-word;
 }
 
 .main pre code {
