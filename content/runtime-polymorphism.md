@@ -76,7 +76,7 @@ user=> "I don't know what Rich Hickey eats."
 
 Here we see a multimethod being defined called `diet`. When we pass in a map with information about an animal on it, the `defmulti` gets the type of diet, `:herbivore` or `:carnivore`, from the `key` of `:eater`. It then dispatches the proper `defmethod`&mdash;`:herbivore`, `:carnivore`, or `:default`&mdash;which gets the value of `:name` from the same map and creates the appropriate string describing the animals diet. If no `:eater` value is found in the given map, the `:default` method is dispatched. 
 
-## Better than an Case
+## Better than a Case
 
 But wait... why would do that when we could just use a case statement? Isn't that the same thing? Take a look: 
 
@@ -91,7 +91,7 @@ But wait... why would do that when we could just use a case statement? Isn't tha
 
 ```
 
-Does this code return the same result? Yes, and `case` even does a constant-time dispatch as well, like the multimethod does. This means that it doesn't go through each line sequentially until it finds the one that satisifies the condition; it can just jump to it. This is a huge performance improvement over `cond`, `condp`, or a chain of `if else` statements when you get to dealing with many different conditions. However, one huge drawback is that, should we need to add functionality to this, we would need to go back into this function and manually change the function itself for it to be able to handle another condition. This violates the Open-closed Principal, which states that "entities should be open for extension but closed for modification." We don't want to go in and start changing functions and run the risk of introducing bugs into the system just to add a feature. With multimethods, we can simply create a new `defmethod` that uses the `diet` `defmulti`, and voila! We have new functionality without editing the original function at all. 
+Does this code return the same result? Yes, and `case` even does a constant-time dispatch as well, like the multimethod does. This means that it doesn't go through each line sequentially until it finds the one that satisfies the condition; it can just jump to it. This is a huge performance improvement over `cond`, `condp`, or a chain of `if else` statements when you get to dealing with many different conditions. However, one huge drawback is that, should we need to add functionality to this, we would need to go back into this function and manually change the function itself for it to be able to handle another condition. This violates the Open-closed Principal, which states that "entities should be open for extension but closed for modification." We don't want to go in and start changing functions and run the risk of introducing bugs into the system just to add a feature. With multimethods, we can simply create a new `defmethod` that uses the `diet` `defmulti`, and voilà! We have new functionality without editing the original function at all. 
 
 ## Conclusion
 
