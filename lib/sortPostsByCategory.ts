@@ -2,15 +2,14 @@ import { Posts } from "./interfaces";
 
 const categories = [
   "Clojure",
-  "ClojureScript",
   "JavaScript",
-  "Node.js",
   "Python",
   "Java",
   "HTML",
   "CSS",
   "React",
-  "Clean Code"
+  "Clean Code",
+  "Workflows"
 ];
 
 export default function sortPostsByCategory(posts: Posts[]) {
