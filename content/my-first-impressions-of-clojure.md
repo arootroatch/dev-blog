@@ -11,7 +11,7 @@ category: Clojure
 
 ## Holy Parentheses
 
-At first glance, Clojure seems to have more parentheses than it could possibly need. This is mainly due to the fact the Clojure is a completely functional language, and the way functions are called is by wrapping it in parentheses. *Everything* is a function in Clojure, so *everything* is wrapped in parentheses. Even defining a global variable is a a function call in which you pass in the variable name and the value you want to bind to that variable. For example:
+At first glance, Clojure seems to have more parentheses than it could possibly need. This is mainly due to the fact the Clojure is a completely functional language, and the way functions are called is by wrapping it in parentheses. *Everything* is a function in Clojure, so *everything* is wrapped in parentheses. Even defining a global variable is a function call in which you pass in the variable name and the value you want to bind to that variable. For example:
 
 
 ```
@@ -19,17 +19,17 @@ At first glance, Clojure seems to have more parentheses than it could possibly n
 ```
 
 
-Here the keyword `def` is being used to define the global variable `my-name` and bind the value of the string "Alex". `def` is the function call and `my-name` and "Alex" are the two arguments being passed to the function, and since we're invoking the function at that time, it's all wrapped in parenthesis. 
+Here the keyword `def` is being used to define the global variable `my-name` and bind the value of the string "Alex". `def` is the function call and `my-name` and "Alex" are the two arguments being passed to the function, and since we're invoking the function at that time, it's all wrapped in parentheses. 
 
 ## Goodbye Syntax
 
-At second glance, however, Clojure has a striking *lack* of syntax. Unlike JavaScript, blocks of code aren't surrounded by curly braces, ends of lines aren't marked with semi-colons, and commas aren't anywhere to be found in maps or vectors (the equivalent of JavaScript's objects and arrays, respectively). If statements in Clojure are so simple it almost makes the JavaScript ternary operator look verbose: 
+At second glance, however, Clojure has a striking *lack* of syntax. Unlike JavaScript, blocks of code aren't surrounded by curly braces, ends of lines aren't marked with semicolons, and commas aren't anywhere to be found in maps or vectors (the equivalent of JavaScript's objects and arrays, respectively). If statements in Clojure are so simple it almost makes the JavaScript ternary operator look verbose: 
 
 ```
 (if ready? "I'm ready!" "I'm almost ready!")
 ```
 
-Here, the if statement evaluates the boolean variable `ready?`. If it returns true, the string "I'm ready!' is returned, else "I'm almost ready!" is returned. In JavaScript, the equivalent using the ternary operator (the most succint method) would look like this: 
+Here, the if statement evaluates the boolean variable `ready?`. If it returns true, the string "I'm ready!" is returned, else "I'm almost ready!" is returned. In JavaScript, the equivalent using the ternary operator (the most succinct method) would look like this: 
 
 ```
 ready ? "I'm ready" : "I'm almost ready!"
@@ -57,7 +57,7 @@ You may be noticing that in that last Clojure example, it seems like I put the g
 
 Clojure uses "prefix notation," meaning all the mathematical symbols go *before* the values, not between them. It doesn't make sense at first, but remember when I said everything in Clojure is a function? These symbols aren't "operators" like they are in JavaScript; they're functions, and the values involved are the arguments to the function. The symbols go first because we are calling the function and then passing in the arguments. 
 
-While this may seem strange at first, I actually think it makes a lot of sense because it keeps you thinking in terms of functions and return values. `(* 5 4)` is a function that `returns` `20`. In JavaScript, `5 * 4` also `returns` `20`, so even in JavaScript it *is* a function, but you can write a million matematical expressions in JavaScript without ever consciously thining about it that way. `5 * 4` just *is* `20`; it's easy to not realize that it's the return value of a function. Prefix notation keeps the way I interpret the code consistent, "functions, arguments, return value."
+While this may seem strange at first, I actually think it makes a lot of sense because it keeps you thinking in terms of functions and return values. `(* 5 4)` is a function that `returns` `20`. In JavaScript, `5 * 4` also `returns` `20`, so even in JavaScript it *is* a function, but you can write a million mathematical expressions in JavaScript without ever consciously thing about it that way. `5 * 4` just *is* `20`; it's easy to not realize that it's the return value of a function. Prefix notation keeps the way I interpret the code consistent, "functions, arguments, return value."
 
 ## Immutability
 
@@ -87,4 +87,4 @@ But wait! Doesn't JavaScript also have `filter`, `map`, and `reduce` methods? Ye
 
 ## Closing Thoughts
 
-When I first looked at Clojure, I was overwhelmed. It seemed so different than other programming languages I had used before like JavaScript, Python, bash, or VBA, and I was worried it was going to be difficult to pick up. However, as I dive deeper and continue learning the language, I keep finding gem after gem of how easy things are in Clojure and how succint it is as a language. Something I might have written 10 lines of code to perform in JavaScript can often be done in one very readable and approachable line of Clojure. Built-in functions like `interleave` and `intersection` are extremely useful and make coding in Clojure more about what you're building than what code you're typing. All in all, I'm excited to keep learning about what other goodies Clojure has in store, and I can't wait to actually get to building things with it!
+When I first looked at Clojure, I was overwhelmed. It seemed so different from other programming languages I had used before like JavaScript, Python, bash, or VBA, and I was worried it was going to be difficult to pick up. However, as I dive deeper and continue learning the language, I keep finding gem after gem of how easy things are in Clojure and how succinct it is as a language. Something I might have written 10 lines of code to perform in JavaScript can often be done in one very readable and approachable line of Clojure. Built-in functions like `interleave` and `intersection` are extremely useful and make coding in Clojure more about what you're building than what code you're typing. All in all, I'm excited to keep learning about what other goodies Clojure has in store, and I can't wait to actually get to building things with it!
