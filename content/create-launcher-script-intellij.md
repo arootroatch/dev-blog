@@ -13,7 +13,7 @@ category: Workflows
 
 Being able to open a directory in your IDE directly from the terminal can be very convenient, especially after doing a `git clone`. VS Code offers the `code` command that's installed via a built-in command in the command palette. IntelliJ, however, does not offer such a feature. This article will be a step-by-step guide to creating a bash script that opens the specified directory in a new IntelliJ window, and since we're professional developers, we'll be doing everything in the terminal. 
 
-This guide is specific to macOS. For other operation systems, see the [IntelliJ Docs](https://www.jetbrains.com/help/idea/working-with-the-ide-features-from-command-line.html).
+This guide is specific to macOS. For other operating systems, see the [IntelliJ Docs](https://www.jetbrains.com/help/idea/working-with-the-ide-features-from-command-line.html).
 
 ## The macOS `open` Command
 
