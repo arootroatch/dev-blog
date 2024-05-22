@@ -24,6 +24,11 @@
   scroll-margin-top: 4rem;
 }
 
+.main img {
+  max-width: 100%;
+  height: auto;
+}
+
 .main a {
   text-decoration: underline;
 }
