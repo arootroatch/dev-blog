@@ -8,7 +8,7 @@ const categories = [
   "HTML",
   "CSS",
   "React",
-  "Clean Code",
+  "Clean Code Practices",
   "Workflows"
 ];
 
