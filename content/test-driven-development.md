@@ -29,7 +29,7 @@ TDD also makes sure your code is written in a testable (and therefore maintainab
 
 ## Maintainably Written Code
 
-Code that is easily testable is often code that is well-structured and has minimal couplings. After all, trying to write a test for a function that does multiple things or for modules that have multiple dependencies on one another is difficult if not impossible. That's why many developers find themselves refactoring their code once they've decided to write unit test. 
+Code that is easily testable is often code that is well-structured and has minimal couplings. After all, trying to write a test for a function that does multiple things, or for modules that have multiple dependencies on one another, is difficult if not impossible. That's why many developers find themselves refactoring their code once they've decided to write unit test. 
 
 If you start with the tests, however, your code is easily testable from the start. This also means that your code is written in a way that probably follows best practices like the Single Responsibility Principle and the Open Closed Principle.
 
@@ -55,7 +55,7 @@ And just like that, we're done. Our production code was completed before we even
 
 ## Fearless Refactor
 
-As Uncle Bob say, the number one reason code rots is because the developers are afraid to make changes to it. In poorly structured code bases, the smallest change might cause a domino effect of breaking the code in a bunch of other places. So instead of owning the code and taking responsibility for it and its bugs, the developers simply don't touch it and thus can't be blamed for the breakages that didn't happen. 
+As Uncle Bob says, the number one reason code rots is because the developers are afraid to make changes to it. In poorly structured code bases, the smallest change might cause a domino effect of breaking the code in a bunch of other places. So instead of owning the code and taking responsibility for it and its bugs, the developers simply don't touch it and thus can't be blamed for the breakages that didn't happen. 
 
 But if all of your code is covered by tests, then there's no reason to be afraid of breaking it. The tests will tell you if something broke and tell you where the bug is. TDD advocates and enables refactoring so fervently that it's the third step in the TDD process. As soon as you get those tests to pass, refactor if you can and make sure the tests still pass. 
 
@@ -67,4 +67,4 @@ There's no need to practice using debugging tools quickly and efficiently, zoomi
 
 ## Conclusion
 
-TDD is hard. It forces us to be intentional in the way write our production code. But that discipline is rewarded with the ability to refactor code as we see fit without fear of breaking things, a huge decreases in debugging time, cleaner, more maintainable code, and code that we can be confident shipping because we know every line that we wrote was tested.
+TDD is hard. It forces us to be intentional in the way write our production code. But that discipline is rewarded with the ability to refactor code as we see fit without fear of breaking things, a huge decrease in debugging time, cleaner, more maintainable code, and code that we can be confident shipping because we know every line that we wrote was tested.
