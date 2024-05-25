@@ -48,6 +48,7 @@
 @media screen and (max-width: 450px) {
   .titleWrapper {
     padding: 1rem;
+    font-size: 1.2rem;
   }
   
 }
