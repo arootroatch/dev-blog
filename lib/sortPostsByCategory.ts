@@ -1,6 +1,7 @@
 import { Posts } from "./interfaces";
 
 const categories = [
+  "Algorithms",
   "Clojure",
   "JavaScript",
   "Python",
