@@ -32,7 +32,7 @@ The `play-move` function first calls a `read-move` function that will wait for u
 
 ### Double Down
 
-What if we need two inputs from the user? Say, for example, we want to test our error handling for when the user enters an invalid input, like a number outside of 1-9, a letter, or the number of a cell that's already taken. That's where the newline `\n` character comes in. For example: 
+What if we need two inputs from the user? Say, for example, we want to test our error handling for when the user enters an invalid input, like a number outside 1-9, a letter, or the number of a cell that's already taken. That's where the newline `\n` character comes in. For example: 
 
 ```
 (it "plays a non-numeric move"
@@ -56,7 +56,7 @@ Now that we've covered user input, what about testing things that we want to pri
         (should= [:x :o 3 4 5 6 7 8 9] result)))
 ```
 
-Here, we want to make sure we are printing an error message if the user enters in a move that's already taken. In our first `should`, we call the function and use `with-in-str` to mimic user input first entering a "1," and then wrap that in `with-out-str` because we expect that to print an error in the terminal since there's already a move in cell 1. It then enters a "2" and tests that the board was updated with an ":o" in cell 2.  
+Here, we want to make sure we are printing an error message if the user enters a move that's already taken. In our first `should`, we call the function and use `with-in-str` to mimic user input first entering a "1," and then wrap that in `with-out-str` because we expect that to print an error in the terminal since there's already a move in cell 1. It then enters a "2" and tests that the board was updated with an ":o" in cell 2.  
 
 ## Stubs
 
