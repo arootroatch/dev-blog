@@ -2,7 +2,7 @@
 layout: blog
 title: Prove minimax is unbeatable - and make it snappy!
 author: Alex Root-Roatch
-description: Using combinatorics and memoization to prove minimax never loses without it taking all day
+description: Using combinatorics and memoization to prove minimax never loses - without it taking all day
 date: 2024-06-17T20:48:48-6:00
 updated: 2024-06-17T20:48:48-6:00
 thumbnail: /img/robot-computer.jpeg
