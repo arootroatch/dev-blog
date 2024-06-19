@@ -71,7 +71,7 @@ export default function SearchBar({ posts }: SearchBarParams) {
               className={styles.listItem}
               onClick={clearInputAndCloseMenu}
             >
-              <Link onClick={toggleSearch} href={`/learn/${item.filePath.replace(/\.mdx?$/, "")}`}>
+              <Link onClick={toggleSearch} href={`/${item.filePath.replace(/\.mdx?$/, "")}`}>
                 <div>{item.data.title}</div>
                 <div className={styles.category}>{item.data.category}</div>
               </Link>
