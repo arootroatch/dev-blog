@@ -12,6 +12,10 @@
   transition: transform 0.2s;
 }
 
+:global(.light) .postcard {
+  background-color: white;
+}
+
 :global(.dark) .postcard {
   box-shadow: 0 0 0.8rem rgba(255, 255, 255, 0.362);
   border: 0.5px solid rgba(255, 255, 255, 0.431);
