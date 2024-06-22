@@ -10,7 +10,8 @@ const categories = [
   "CSS",
   "React",
   "Clean Code Practices",
-  "Workflows"
+  "Workflows",
+  "Uncategorized"
 ];
 
 export default function sortPostsByCategory(posts: Posts[]) {
