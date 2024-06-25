@@ -1,0 +1,42 @@
+.nav {
+    position: sticky;
+    top: 50px;
+    /*left: 5%;*/
+    margin: 8px auto;
+    z-index: 999;
+    background: rgba(252, 252, 252, 0.8);
+    border-radius: 50px;
+    width: fit-content;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+:global(.dark) .nav {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.li {
+    display: inline-block;
+    font-family: "Syne Mono", monospace;
+    margin: 1rem 1rem;
+}
+
+.li:hover {
+    cursor: pointer;
+    color: #d32fb9;
+}
+
+@media screen and (max-width: 791px) {
+    .nav {
+        border-radius: 0;
+        margin: 0;
+        width: 100vw;
+        transform: translateX(-1rem);
+        padding-bottom: .5rem;
+        padding-top: .5rem;
+
+    }
+    .li {
+        margin: 0 1rem;
+    }
+}

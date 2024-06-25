@@ -1,10 +1,10 @@
-
 import styles from "./blog.module.css";
 import PostScroller from "@/components/PostScroller";
 import Hero from "@/components/Hero";
 import getPosts from "@/lib/getPosts";
 import sortPostsByCategory from "@/lib/sortPostsByCategory";
 import getMostRecentPosts from "@/lib/getMostRecentPosts";
+import CategoryNav from "@/components/CategoryNav";
 
 export default async function Home() {
   const posts = await getPosts();
@@ -22,12 +22,14 @@ export default async function Home() {
         />
       </header>
       <div className={styles.homeContent}>
-        <PostScroller title='Recent' category={recent} />
+        <CategoryNav categorized={categorized}/>
+        <PostScroller title='Recent' category={recent}/>
         {categorized.map((category) => (
           <PostScroller
             key={category[0].data.title}
             title={category[0].data.category}
             category={category}
+            id={category[0].data.category}
           />
         ))}
       </div>

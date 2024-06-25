@@ -4,7 +4,6 @@
   margin: 0 auto;
   max-width: 1400px;
   width: 100%;
-  overflow: scroll;
 }
 
 :global(.dark) .wrapper {
@@ -12,6 +11,7 @@
 }
 
 .title {
+  scroll-margin-top: 130px;
   text-align: center;
   margin-bottom: 2.5rem;
   letter-spacing: 0.3rem;
@@ -38,4 +38,16 @@
   color: rgb(255, 255, 255);
   border: 2px inset rgb(255, 255, 255);
   box-shadow: 0px 5px 0.8rem rgba(255, 255, 255, 0.326); 
+}
+
+@media screen and (max-width: 759px){
+  .title {
+    scroll-margin-top: 160px;
+  }
+}
+
+@media screen and (max-width: 483px){
+  .title {
+    scroll-margin-top: 180px;
+  }
 }

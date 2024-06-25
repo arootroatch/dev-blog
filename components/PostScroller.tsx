@@ -3,11 +3,11 @@ import styles from "@/components/postScroller.module.css";
 import { PostScrollerProps } from "@/lib/interfaces";
 import Link from "next/link";
 
-export default function PostScroller({ title, category, allPostsButton }: PostScrollerProps) {
+export default function PostScroller({ title, category, allPostsButton, id }: PostScrollerProps) {
   return (
     <div className={styles.wrapper}>
       <div>
-        <h2 className={`${styles.title}`}>{title}</h2>
+        <h2 className={`${styles.title}`} id={id ? id : undefined}>{title}</h2>
       </div>
       <div className={styles.categoryWrapper}>
         {category.map((post) => (
