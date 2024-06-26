@@ -5,7 +5,7 @@ author: Alex Root-Roatch
 description: Defmulti aren't just messengers; they are fully capable functions that can process what to dispatch, too!
 date: 2024-06-25T21:00:11-6:00
 updated: 2024-06-25T21:00:11-6:00
-thumbnail: /img/clojure-banner.png
+thumbnail: /img/fork-road.jpeg
 category: Clojure
 ---
 
