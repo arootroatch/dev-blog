@@ -40,6 +40,7 @@ export interface PostScrollerProps {
   category: Posts[];
   allPostsButton?: boolean;
   id?: string;
+  count?: number;
 }
 
 export interface SearchBarParams {

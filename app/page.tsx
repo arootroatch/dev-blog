@@ -30,6 +30,7 @@ export default async function Home() {
             title={category[0].data.category}
             category={category}
             id={category[0].data.category}
+            count={category.length}
           />
         ))}
       </div>
