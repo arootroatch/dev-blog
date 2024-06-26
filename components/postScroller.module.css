@@ -11,7 +11,7 @@
 }
 
 .title {
-  scroll-margin-top: 150px;
+  scroll-margin-top: 135px;
   margin-bottom: 1.5rem;
   margin-top: 0.5rem;
   letter-spacing: 0.3rem;
@@ -61,12 +61,12 @@
 
 @media screen and (max-width: 759px){
   .title {
-    scroll-margin-top: 160px;
+    scroll-margin-top: 150px;
   }
 }
 
 @media screen and (max-width: 483px){
   .title {
-    scroll-margin-top: 180px;
+    scroll-margin-top: 170px;
   }
 }

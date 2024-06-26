@@ -1,8 +1,7 @@
 .nav {
     position: sticky;
     top: 50px;
-    /*left: 5%;*/
-    margin: 8px auto;
+    margin: 0 auto 8px auto;
     z-index: 999;
     background: rgba(252, 252, 252, 0.8);
     border-radius: 50px;
