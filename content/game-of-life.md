@@ -32,7 +32,7 @@ I have three functions total: `get-neighbors-of`, `evolve-cell`, and `evolve`.
 
 ## Cool Tricks
 
-I used two features that stuck out to me in my implementation: using sets in `filter` and `mapcat`.
+I used two features that stuck out to me in my implementation: using sets in `filter`, and `mapcat`.
 
 When using `filter`, I typically think of it as only taking a predicate function followed by a collection. However, in Clojure, sets can also be used as predicates. This made it very easy to check if the neighbors of a cell were live neighbors by using the set of live neighbors as the predicate for filtering the neighbors. Any cell that is in the set of live cells and also in the set of neighbors will be returned as the result of `filter`. 
 
