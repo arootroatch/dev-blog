@@ -5,7 +5,7 @@ author: Alex Root-Roatch
 description: The first kata I've done dealing with grid coordinates and a GUI.
 date: 2024-06-28T09:28:12-6:00
 updated: 2024-06-28T09:28:12-6:00
-thumbnail: /img/clojure-banner.png
+thumbnail: /img/Game_of_life_glider_gun.svg
 category: Clojure
 ---
 
