@@ -10,6 +10,14 @@ import PostScroller from "@/components/PostScroller";
 import getPosts from "@/lib/getPosts";
 import getMostRecentPosts from "@/lib/getMostRecentPosts";
 
+export async function generateStaticParams() {
+  const posts = await getPosts();
+
+  return posts.map((post) => ({
+    slug: `${post.filePath.replace(/\.mdx?$/, "")}`,
+  }))
+}
+
 export default async function PostPage({
   params,
 }: {
