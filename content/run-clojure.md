@@ -2,7 +2,7 @@
 layout: blog
 title: Diamonds, Printing, and Run!
 author: Alex Root-Roatch
-description: Solving the diamond kata led to some knew discoveries
+description: Solving the diamond kata led to some new discoveries
 date: 2024-06-14T22:12:51-6:00
 updated: 2024-06-14T22:12:51-6:00
 thumbnail: /img/clojure-banner.png
