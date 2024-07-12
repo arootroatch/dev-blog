@@ -8,7 +8,7 @@ export default function PostScroller({ title, category, allPostsButton, id, coun
     <div className={styles.wrapper}>
       <div>
         <h2 className={`${styles.title}`} id={id ? id : undefined}>{title}</h2>
-        {count && <div className={styles.count}>{count} articles</div>}
+        {count && <div className={styles.count}>{count} article{(count > 1) && "s"}</div>}
       </div>
       <div className={styles.categoryWrapper}>
         {category.map((post) => (
