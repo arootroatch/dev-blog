@@ -9,7 +9,7 @@ import CategoryNav from "@/components/CategoryNav";
 export default async function Home() {
   const posts = await getPosts();
   const categorized = sortPostsByCategory(posts);
-  const recent = getMostRecentPosts(posts, 5);
+  const recent = getMostRecentPosts(posts, 10);
 
   return (
     <>

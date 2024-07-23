@@ -51,7 +51,7 @@ export default async function PostPage({
   const gated = frontmatter.gated;
 
   const posts = await getPosts();
-  const recent = getMostRecentPosts(posts, 5);
+  const recent = getMostRecentPosts(posts, 10);
 
   const slug = params.slug;
   const pageURL = `https://arootroatch-blog.vercel.app/${slug}`;
