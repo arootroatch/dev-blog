@@ -28,7 +28,7 @@ export default function SearchBar({posts}: SearchBarParams) {
   }
 
   useEffect(()=>{
-    const close = (e) => {
+    const close = (e: any) => {
       if (e.key === 'Escape'){
         closeSearch();
       }
