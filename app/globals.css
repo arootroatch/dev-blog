@@ -118,15 +118,21 @@ h4 {
   font-weight: 400;
 }
 
+p {
+  margin: 1rem auto 0 auto;
+}
+
 p, ul, ol {
   max-width: 800px;
   line-height: 1.5rem;
-  margin-top: 1rem;
-  margin: 0 auto;
+}
+
+ul, ol {
+  margin: 2rem auto 2rem auto;
 }
 
 li {
-  margin: 1rem 0 1rem 2rem;
+  margin: 0.2rem 0 0.2rem 2rem;
 }
 
 section {
