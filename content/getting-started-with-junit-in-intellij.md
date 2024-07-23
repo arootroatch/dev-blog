@@ -6,7 +6,8 @@ description: Setting up a TDD Java environment without Gradle or Maven
 date: 2024-07-11T22:23:06-6:00
 updated: 2024-07-11T22:23:06-6:00
 thumbnail: /img/java-banner.png
-category: Java
+category: 
+  - Java
 ---
 
 ## What's a Gradle?

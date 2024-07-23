@@ -6,7 +6,8 @@ description: I was way overthinking how to integrate my tic-tac-toe AI into Quil
 date: 2024-07-09T14:58:13-6:00
 updated: 2024-07-09T14:58:13-6:00
 thumbnail: /img/ttt-minmax.png
-category: Clojure
+category: 
+  - Clojure
 ---
 
 ## Triggering the AI

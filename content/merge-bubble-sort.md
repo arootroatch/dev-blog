@@ -6,7 +6,8 @@ description: Two basic sorting algorithms all developers should know
 date: 2024-06-04T22:54:31-6:00
 updated: 2024-06-04T22:54:31-6:00
 thumbnail: /img/sorting.jpeg
-category: Algorithms
+category:
+  - Algorithms
 ---
 
 ## Introduction

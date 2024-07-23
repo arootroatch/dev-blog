@@ -6,7 +6,8 @@ description: My first time creating a GUI  that doesn't use HTML and CSS
 date: 2024-06-29T08:45:32-6:00
 updated: 2024-06-29T08:45:32-6:00
 thumbnail: /img/Game_of_life_glider_gun.svg
-category: Clojure
+category:
+  - Clojure
 ---
 
 ## Centering a Square

@@ -6,7 +6,8 @@ description: IntelliJ's File Template feature makes creating our own boilerplate
 date: 2024-05-21T17:24:02-6:00
 updated: 2024-05-21T17:24:02-6:00
 thumbnail: /img/intellij-logo.png
-category: Workflows
+category: 
+  - Workflows
 ---
 
 ## What's a File Template?

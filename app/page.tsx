@@ -27,9 +27,9 @@ export default async function Home() {
         {categorized.map((category) => (
           <PostScroller
             key={category[0].data.title}
-            title={category[0].data.category}
+            title={category[0].data.category[0]}
             category={category}
-            id={category[0].data.category}
+            id={category[0].data.category[0]}
             count={category.length}
           />
         ))}

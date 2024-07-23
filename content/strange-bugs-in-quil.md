@@ -6,7 +6,8 @@ description: Dealing with overlapping screens and persistent mouse clicks
 date: 2024-07-08T22:12:17-6:00
 updated: 2024-07-08T22:12:17-6:00
 thumbnail: /img/ttt-minmax.png
-category: Clojure
+category: 
+  - Clojure
 ---
 
 ## Overlapping Screens

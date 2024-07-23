@@ -6,7 +6,9 @@ description: Diving into the lower-level detail of how array lists work.
 date: 2024-07-18T22:01:36-6:00
 updated: 2024-07-18T22:01:36-6:00
 thumbnail: /img/java-banner.png
-category: Java
+category: 
+  - Algorithms
+  - Java
 ---
 
 ## Array vs Array List

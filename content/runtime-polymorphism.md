@@ -6,7 +6,8 @@ description: Multi-arity and multimethods are two unique ways Clojure let's us c
 date: 2024-05-15T22:57:31.452Z
 updated: 2024-05-15T22:57:31.452Z
 thumbnail: /img/fork-road.jpeg
-category: Clojure
+category: 
+  - Clojure
 ---
 
 ## Multi-Arity Gives You Plenty of Arguments

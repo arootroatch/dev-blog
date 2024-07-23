@@ -6,7 +6,8 @@ description: Using Clojure's version of JSON as a basic database for logging tic
 date: 2024-07-15T21:20:37-6:00
 updated: 2024-07-15T21:20:37-6:00
 thumbnail: /img/clojure-banner.png
-category: Clojure
+category: 
+  - Clojure
 ---
 
 ## The Basic Functions

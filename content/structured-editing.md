@@ -6,7 +6,8 @@ description: The Cursive plug-in provides a lot of useful features to help type 
 date: 2024-06-12T20:14:46-6:00
 updated: 2024-06-12T20:14:46-6:00
 thumbnail: /img/clojure-banner.png
-category: Workflows
+category: 
+  - Workflows
 ---
 
 ## What is Cursive? 

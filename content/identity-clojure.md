@@ -6,7 +6,8 @@ description: Clojure's `identity` function is useful when we want to pass a sing
 date: 2024-05-31T17:45:50-6:00
 updated: 2024-05-31T17:45:50-6:00
 thumbnail: /img/hotpotato.webp
-category: Clojure
+category: 
+  - Clojure
 ---
 
 ## Callback Blocked

@@ -6,7 +6,8 @@ description: Binding destructured values to variables inside function parameters
 date: 2024-07-16T20:23:01-6:00
 updated: 2024-07-16T20:23:01-6:00
 thumbnail: /img/clojure-banner.png
-category: Clojure
+category: 
+  - Clojure
 ---
 
 ## Coordinating Coordinates

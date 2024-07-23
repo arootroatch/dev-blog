@@ -15,7 +15,7 @@ export interface Frontmatter {
   date: string;
   updated: string;
   thumbnail: string;
-  category: string;
+  category: string[];
   gated?: boolean;
 }
 

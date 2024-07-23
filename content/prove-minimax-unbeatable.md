@@ -6,7 +6,8 @@ description: Using combinatorics and memoization to prove minimax never loses - 
 date: 2024-06-17T20:48:48-6:00
 updated: 2024-06-17T20:48:48-6:00
 thumbnail: /img/robot-computer.jpeg
-category: Clojure
+category: 
+  - Clojure
 ---
 
 ## Writing Code for My Code

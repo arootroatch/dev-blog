@@ -6,7 +6,8 @@ description: This annotatition can help make tests DRY-er.
 date: 2024-07-17T20:51:09-6:00
 updated: 2024-07-17T20:51:09-6:00
 thumbnail: /img/java-banner.png
-category: Java
+category: 
+  - Java
 ---
 
 ## Making Change

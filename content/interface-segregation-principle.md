@@ -6,7 +6,8 @@ description: Understanding the "I" in SOLID using the switches in our homes
 date: 2024-06-11T22:31:04-6:00
 updated: 2024-06-11T22:31:04-6:00
 thumbnail: /img/interface-segregation/light-switch.jpeg
-category: Clean Code Practices
+category: 
+  - Clean Code Practices
 ---
 
 ## What is the Interface Segregation Principle? 

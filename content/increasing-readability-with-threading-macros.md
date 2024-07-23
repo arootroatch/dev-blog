@@ -6,7 +6,8 @@ description: Ever feel like you're crawling out of hole trying to make sense of 
 date: 2024-05-17T00:17:49.057Z
 updated: 2024-05-17T00:17:49.057Z
 thumbnail: /img/crawl-out-of-hole.jpeg
-category: Clojure
+category: 
+  - Clojure
 ---
 
 ## Someone Get Me a Ladder!

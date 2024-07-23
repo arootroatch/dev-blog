@@ -6,7 +6,8 @@ description: Make your software easy to maintain and understand by separating di
 date: 2024-05-23T18:49:20-6:00
 updated: 2024-05-23T18:49:20-6:00
 thumbnail: /img/hand-up.jpeg
-category: Clean Code Practices
+category: 
+  - Clean Code Practices
 ---
 
 ## What is the Single Responsibility Principle?

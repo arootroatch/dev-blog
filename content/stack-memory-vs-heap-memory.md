@@ -6,7 +6,8 @@ description: Exploring the two types of memory allocation in programming
 date: 2024-07-05T08:35:42-6:00
 updated: 2024-07-05T08:35:42-6:00
 thumbnail: /img/stack-vs-heap.webp
-category: Uncategorized
+category:
+  - Uncategorized
 ---
 
 ## Stack Allocation

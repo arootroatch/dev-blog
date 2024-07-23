@@ -6,7 +6,8 @@ description: Reflecting on my first month as a Clean Coders Apprentice
 date: 2024-06-14T08:02:32-6:00
 updated: 2024-06-14T08:02:32-6:00
 thumbnail: /img/Apprenticeship.jpg
-category: Uncategorized 
+category: 
+  - Uncategorized 
 ---
 
 ## The Clean Coders Environment

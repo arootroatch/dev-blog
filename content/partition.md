@@ -6,7 +6,8 @@ description: Clojure's `partition` function is another powerful one-liner where 
 date: 2024-05-30T20:28:17-6:00
 updated: 2024-05-30T20:28:17-6:00
 thumbnail: /img/clojure-banner.png
-category: Clojure
+category:
+  - Clojure
 ---
 
 ## A One Thousand Digit Problem

@@ -6,7 +6,8 @@ description: Getting minimax to not be unusably slow on a 3D board required a va
 date: 2024-07-03T20:06:35-6:00
 updated: 2024-07-03T20:06:35-6:00
 thumbnail: /img/3d-ttt.webp
-category: Algorithms
+category: 
+  - Algorithms
 ---
 
 ## 3D Tic-Tac-Toe

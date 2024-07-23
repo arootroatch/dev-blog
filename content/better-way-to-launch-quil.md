@@ -7,7 +7,8 @@ description:
 date: 2024-07-10T18:41:23-6:00
 updated: 2024-07-10T18:41:23-6:00
 thumbnail: /img/clojure-banner.png
-category: Clojure
+category: 
+  - Clojure
 ---
 
 ## `defsketch` Is the One Who Knocks

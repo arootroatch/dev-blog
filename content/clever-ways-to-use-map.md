@@ -6,7 +6,8 @@ description: Unlocking more possibilities than simply iterating through each ite
 date: 2024-06-26T22:38:58-6:00
 updated: 2024-06-26T22:38:58-6:00
 thumbnail: /img/clojure-banner.png
-category: Clojure
+category:
+  - Clojure
 ---
 
 ## Changing Perspective

@@ -6,7 +6,8 @@ description: The fifth and final part of SOLID Design Principles
 date: 2024-06-18T19:39:47-6:00
 updated: 2024-06-18T19:39:47-6:00
 thumbnail: /img/solid.png
-category: Clean Code Practices
+category: 
+  - Clean Code Practices
 ---
 
 ## What is the Dependency Inversion Principle?

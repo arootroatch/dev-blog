@@ -6,7 +6,8 @@ description: When it comes to structuring our code, there's something to be lear
 date: 2024-06-03T20:47:54-6:00
 updated: 2024-06-03T20:47:54-6:00
 thumbnail: /img/open-closed-post/power-strips.webp
-category: Clean Code Practices
+category: 
+  - Clean Code Practices
 ---
 
 ## What Is the Open-Closed Principle?

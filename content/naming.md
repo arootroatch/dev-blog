@@ -6,7 +6,8 @@ description: You shouldn't feel like you need to crack a code to read your code.
 date: 2024-05-28T15:55:23-6:00
 updated: 2024-05-28T15:55:23-6:00
 thumbnail: /img/cryptex.jpg
-category: Clean Code Practices
+category: 
+  - Clean Code Practices
 ---
 
 ## The Hardest Part of Coding

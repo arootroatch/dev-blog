@@ -6,7 +6,8 @@ description: Clojure lets us be lazy to help us be more productive.
 date: 2024-05-21T00:37:36.242Z
 updated: 2024-05-21T00:37:36.242Z
 thumbnail: /img/sloth-computer.avif
-category: Clojure
+category:
+  - Clojure
 ---
 
 ## No Loops? No Problem

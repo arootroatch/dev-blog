@@ -6,7 +6,8 @@ description: Making `lein run gui` launch Quil while retaining the previous `lei
 date: 2024-07-04T11:45:31-6:00
 updated: 2024-07-10T11:45:31-6:00
 thumbnail: /img/clojure-banner.png
-category: Clojure
+category: 
+  - Clojure
 ---
 
 > UPDATE: The third section of this post, "Leveraging Multi-Arity", states that running `lein run` without arguments no longer works after adding `&args` to `main`. This is because this syntax is incorrect. To be variadic, there should be a space after the ampersand: `& args`. This allows for both `lein run` and `lein run gui` to work properly without needing multi-arity.

@@ -6,7 +6,8 @@ description: Immutability means no JavaScript-style `for` loops, and so we must 
 date: 2024-05-15T01:29:43.709Z
 updated: 2024-05-15T01:29:43.709Z
 thumbnail: /img/house-of-stairs.jpeg
-category: Clojure
+category: 
+  - Clojure
 ---
 
 ## Recursion?! I'm already lost.

@@ -6,7 +6,8 @@ description: Stubs can allow us to test when our function invokes other function
 date: 2024-06-19T20:18:18-6:00
 updated: 2024-06-19T20:18:18-6:00
 thumbnail: /img/robot-computer.jpeg
-category: Clojure
+category: 
+  - Clojure
 ---
 
 ## No New Code Here

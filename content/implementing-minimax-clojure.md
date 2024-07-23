@@ -6,7 +6,8 @@ description: The Minimax algorithm is a handy way to calculate the best possible
 date: 2024-06-11T14:39:52-6:00
 updated: 2024-06-11T14:39:52-6:00
 thumbnail: /img/ttt-minmax.png
-category: Algorithms
+category: 
+  - Algorithms
 ---
 
 ## Introduction to Minimax

@@ -6,7 +6,8 @@ description: Professionals practice their craft. They don't rely on their paid w
 date: 2024-06-07T19:34:21-6:00
 updated: 2024-06-07T19:34:21-6:00
 thumbnail: /img/ana-vidovic.jpeg
-category: Clean Code Practices
+category: 
+  - Clean Code Practices
 ---
 
 ## The Importance of Practice

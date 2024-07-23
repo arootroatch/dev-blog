@@ -6,7 +6,8 @@ description: My first look into a fully functional language began with confusion
 date: 2024-05-14T05:43:53.889Z
 updated: 2024-05-14T05:43:53.889Z
 thumbnail: /img/clojure-banner.png
-category: Clojure
+category:
+  - Clojure
 ---
 
 ## Holy Parentheses

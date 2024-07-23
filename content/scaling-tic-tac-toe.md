@@ -6,7 +6,8 @@ description: Adding an option for a 4x4 board proved easier than I thought - but
 date: 2024-06-22T10:53:27-6:00
 updated: 2024-06-22T10:53:27-6:00
 thumbnail: /img/ttt-minmax.png
-category: Uncategorized
+category: 
+  - Uncategorized
 ---
 
 ## Great - Now Make It Bigger

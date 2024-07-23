@@ -6,7 +6,8 @@ description: Making Tic-Tac-Toe 4x4 slowed minimax to a crawl. Here's how I sped
 date: 2024-06-25T08:04:44-6:00
 updated: 2024-06-25T08:04:44-6:00
 thumbnail: /img/ttt-minmax.png
-category: Algorithms
+category: 
+  - Algorithms
 ---
 
 ## Holy Recursion, Batman!

@@ -6,7 +6,8 @@ description: The first kata I've done dealing with grid coordinates and a GUI.
 date: 2024-06-28T09:28:12-6:00
 updated: 2024-06-28T09:28:12-6:00
 thumbnail: /img/Game_of_life_glider_gun.svg
-category: Clojure
+category: 
+  - Clojure
 ---
 
 ## Rules of Evolution

@@ -6,7 +6,8 @@ description: Fixing a Single Responsibility violation in my Quil screen function
 date: 2024-07-15T19:33:07-6:00
 updated: 2024-07-15T19:33:07-6:00
 thumbnail: /img/ttt-minmax.png
-category: Clojure
+category: 
+  - Clojure
 ---
 
 ## Screen-Drawing Functions

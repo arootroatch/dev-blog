@@ -6,7 +6,8 @@ description: This list comprehension is very handy for iterating through multipl
 date: 2024-07-07T21:39:32-6:00
 updated: 2024-07-07T21:39:32-6:00
 thumbnail: /img/clojure-banner.png
-category: Clojure
+category: 
+  - Clojure
 ---
 
 ## Double Map

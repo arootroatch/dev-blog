@@ -6,7 +6,9 @@ description: Learning how linked lists work and how they differ from arrays
 date: 2024-07-22T18:48:10-6:00
 updated: 2024-07-22T18:48:10-6:00
 thumbnail: /img/java-banner.png
-category: Java
+category:
+  - Algorithms
+  - Java
 ---
 
 ## What Is a Linked List? 

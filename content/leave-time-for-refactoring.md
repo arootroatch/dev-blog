@@ -6,7 +6,8 @@ description: Implementing new features might not take very long, but what about 
 date: 2024-06-20T21:24:49-6:00
 updated: 2024-06-20T21:24:49-6:00
 thumbnail: /img/editing.png
-category: Uncategorized
+category: 
+  - Uncategorized
 ---
 
 ## More Tic-Tac-Toe Features

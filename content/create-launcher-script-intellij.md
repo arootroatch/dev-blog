@@ -6,7 +6,8 @@ description: A how-to on opening project directories directly from your terminal
 date: 2024-05-18T01:58:31.529Z
 updated: 2024-05-18T01:58:31.529Z
 thumbnail: /img/intellij-logo.png
-category: Workflows
+category: 
+  - Workflows
 ---
 
 ## Introduction

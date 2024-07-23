@@ -6,7 +6,8 @@ description: Clojure libs like `math` and `string` need to be imported to the RE
 date: 2024-05-25T09:28:31-6:00
 updated: 2024-05-25T09:28:31-6:00
 thumbnail: /img/clojure-banner.png
-category: Clojure
+category:
+  - Clojure
 ---
 
 ## Using the REPL to Help You Code

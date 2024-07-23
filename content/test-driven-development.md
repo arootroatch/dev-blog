@@ -6,7 +6,8 @@ description: TDD can be hard and feels like doubling your code, but the benefits
 date: 2024-05-22T19:38:36-6:00
 updated: 2024-05-22T19:38:36-6:00
 thumbnail: /img/TDD.webp
-category: Clean Code Practices
+category: 
+  - Clean Code Practices
 ---
 
 ## The Three Laws of Test Driven Development

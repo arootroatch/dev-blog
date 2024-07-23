@@ -6,7 +6,8 @@ description: Clojure's `cond` provides a cleaner, more readable method for handl
 date: 2024-05-29T19:51:46-6:00
 updated: 2024-05-29T19:51:46-6:00
 thumbnail: /img/clojure-banner.png
-category: Clojure
+category:
+  - Clojure
 ---
 
 ## A JavaScript State of Mind

@@ -6,7 +6,8 @@ description: How to have automated tests when your application depends on user i
 date: 2024-06-06T20:42:32-6:00
 updated: 2024-06-06T20:42:32-6:00
 thumbnail: /img/robot-computer.jpeg
-category: Clojure
+category: 
+  - Clojure
 ---
 
 ## Tic Tac Toe

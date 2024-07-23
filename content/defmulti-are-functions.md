@@ -6,7 +6,8 @@ description: Defmulti aren't just messengers; they are fully capable functions t
 date: 2024-06-25T21:00:11-6:00
 updated: 2024-06-25T21:00:11-6:00
 thumbnail: /img/fork-road.jpeg
-category: Clojure
+category: 
+  - Clojure
 ---
 
 ## Unnecessary Conditionals
