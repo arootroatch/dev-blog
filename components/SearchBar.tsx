@@ -1,13 +1,12 @@
-
-import React, { useState } from "react";
-import { useCombobox } from "downshift";
+import React, {useEffect, useState} from "react";
+import {useCombobox} from "downshift";
 import styles from "./searchBar.module.css";
-import { SearchBarParams } from "@/lib/interfaces";
+import {SearchBarParams} from "@/lib/interfaces";
 import Fuse from "fuse.js";
 import Link from "next/link";
-import { IoIosSearch } from "react-icons/io";
+import {IoIosSearch} from "react-icons/io";
 
-export default function SearchBar({ posts }: SearchBarParams) {
+export default function SearchBar({posts}: SearchBarParams) {
   const [inputItems, setInputItems] = React.useState(posts);
   const fuse = new Fuse(posts, {
     keys: ["data.title", "data.category"],
@@ -19,10 +18,24 @@ export default function SearchBar({ posts }: SearchBarParams) {
     setSearchOpen(!searchOpen);
   }
 
+  function closeSearch() {
+    if (searchOpen) setSearchOpen(!searchOpen);
+  }
+
   function clearInputAndCloseMenu() {
     selectItem(null);
     closeMenu();
   }
+
+  useEffect(()=>{
+    const close = (e) => {
+      if (e.key === 'Escape'){
+        closeSearch();
+      }
+    }
+    window.addEventListener('keydown', close);
+    return ()=> window.removeEventListener("keydown", close)
+  })
 
   const {
     isOpen,
@@ -34,7 +47,7 @@ export default function SearchBar({ posts }: SearchBarParams) {
     closeMenu
   } = useCombobox({
     items: inputItems,
-    onInputValueChange: ({ inputValue }) => {
+    onInputValueChange: ({inputValue}) => {
       let search = fuse.search(inputValue);
       let searchResults = search.map((result) => result.item);
       setInputItems(searchResults);
@@ -42,7 +55,7 @@ export default function SearchBar({ posts }: SearchBarParams) {
   });
   return (
     <div className={styles.searchBarWrapper}>
-      <IoIosSearch className={styles.search} onClick={toggleSearch} />
+      <IoIosSearch className={styles.search} onClick={toggleSearch}/>
       <div
         className={`${styles.searchBar} ${searchOpen && styles.openSearch} ${
           isOpen && styles.openSearchAndList
@@ -63,11 +76,11 @@ export default function SearchBar({ posts }: SearchBarParams) {
             <li
               style={
                 highlightedIndex === index
-                  ? { backgroundColor: "#bde3ff3f" }
+                  ? {backgroundColor: "#bde3ff3f"}
                   : {}
               }
               key={`${item}${index}`}
-              {...getItemProps({ item, index })}
+              {...getItemProps({item, index})}
               className={styles.listItem}
               onClick={clearInputAndCloseMenu}
             >
