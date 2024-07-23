@@ -4,7 +4,7 @@ title: Implementing Linked Lists in Java
 author: Alex Root-Roatch
 description: Learning how linked lists work and how they differ from arrays
 date: 2024-07-22T18:48:10-6:00
-updated: 2024-07-22T18:48:10-6:00
+updated: 2024-07-23T16:48:10-6:00
 thumbnail: /img/java-banner.png
 category:
   - Algorithms
@@ -74,14 +74,16 @@ Removing elements is very simple compared to removing elements from array, as it
 While retrieving data from linked lists is slower than arrays, adding and removing elements from a linked list is markedly faster. Let's talk numbers: 
 
 ### Array Metrics
-- Adding 1000 elements to end takes 2.687382ms 
-- Adding 1000 elements to middle (incrementing index) takes 4.853044ms
-- Adding 1000 elements to middle (static index) takes 8.719762ms 
-- Adding 1000 elements to beginning takes 2.244435ms
+- Adding 1000 elements to end takes 2.271763ms
+- Adding 1000 elements to middle (incrementing index) takes 3.800271ms
+- Adding 1000 elements to middle (static index) takes 5.902305ms
+- Adding 1000 elements to beginning takes 1.749421ms
 
 ### Linked List Metrics
-- Adding 1000 elements to end takes 0.421417ms 
-- Adding 1000 elements to middle (incrementing index) takes 0.625574ms 
-- Adding 1000 elements to middle (static index) takes 0.486917ms 
-- Adding 1000 elements to beginning takes 0.504539ms
+- Adding 1000 elements to end takes 0.305118ms
+- Adding 1000 elements to middle (incrementing index) takes 3.573475ms 
+- Adding 1000 elements to middle (static index) takes 0.11343ms 
+- Adding 1000 elements to beginning takes 0.078739ms
+
+It's interesting to note that, when inserting elements to the middle of the collection, incrementing the index at which the new items were inserted increased performance for arrays but drastically decreased performance for the linked lists. The increase in performance for arrays is due to minimizing the amount of items that need to be shifted down in the array with each new element. The drop in performance for linked lists is because with each new index, the program needs to traverse through the list in order to find it, and the amount of elements it needs to traverse before finding the desired index will increase with each added element.
 
