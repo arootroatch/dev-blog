@@ -6,7 +6,7 @@ description: One of the largest global cyber outages in history could have been 
 date: 2024-07-24T18:10:59-6:00
 updated: 2024-07-24T18:10:59-6:00
 thumbnail: /img/BSOD.jpg
-category: Uncategorized
+category: [Uncategorized]
 ---
 
 ## One Bad Driver File

@@ -127,6 +127,10 @@ p, ul, ol {
   line-height: 1.5rem;
 }
 
+ul ul, ol ol {
+  margin: 0 auto;
+}
+
 ul, ol {
   margin: 2rem auto 2rem auto;
 }
