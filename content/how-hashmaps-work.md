@@ -156,16 +156,6 @@ The story changes dramatically with large datasets, though:
 Traversing 500,000 nodes in a linked list took *significantly* longer, while the array barely saw a decrease in speed,
 and the hash map was actually slightly faster!
 
-## Adding Elements
-
-For smaller datasets, adding elements to a hash map is comparable to the other collection types. With large datasets,
-however, the memory re-allocation and re-hashing of keys slows things down:
-
-- Adding 1,000,000 items
-    - HashMap -- 258.134982ms
-    - Array (added at last index) -- 74.755046ms
-    - Linked List (added at last index) -- 43.841113ms
-
 ## Conclusion
 
 Hash maps are an array of linked list in which each node is a key-value pair. The index at which each item will be inserted
