@@ -2,14 +2,15 @@ import { Posts } from "./interfaces";
 
 const categories = [
   "Algorithms",
+  "Clean Code Practices",
   "Clojure",
+  "CSS",
+  "HTML",
+  "Java",
   "JavaScript",
   "Python",
-  "Java",
-  "HTML",
-  "CSS",
   "React",
-  "Clean Code Practices",
+  "SQL",
   "Workflows",
   "Uncategorized"
 ];
