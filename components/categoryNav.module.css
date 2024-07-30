@@ -14,10 +14,16 @@
     background: rgba(0, 0, 0, 0.7);
 }
 
+.ul {
+    margin: 0 auto;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
 .li {
     display: inline-block;
     font-family: "Syne Mono", monospace;
-    margin: 1rem 1rem;
+    margin: 0.2rem 1rem;
 }
 
 .li:hover {
@@ -31,8 +37,8 @@
         margin: 0;
         width: 100vw;
         transform: translateX(-1rem);
-        padding-bottom: .5rem;
-        padding-top: .5rem;
+        padding-bottom: .2rem;
+        padding-top: .2rem;
 
     }
     .li {

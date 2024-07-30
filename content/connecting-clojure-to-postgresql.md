@@ -53,5 +53,9 @@ Clojure 1.10 or later, so a quick upgrade of my Clojure version in my project.cl
 
 ## Watch Out for Type Errors
 
-With SQL being statically typed, I ran into a few issues inserting rows to the database. For example, if the game is not in "Computer vs Computer" mode, the `:second-ai-level` key would have a value of `nil` in the `game-state` map. Since this column in the database is typed as an integer, this led to a syntax error when trying to add it to the database. To prevent this, I needed to put extra checks in place in the function that formats the SQL command to ensure that any nil values that would be posted to integer columns were changed to zeros.
+With SQL being statically typed, I ran into a few issues inserting rows to the database. For example, if the game is not
+in "Computer vs Computer" mode, the `:second-ai-level` key would have a value of `nil` in the `game-state` map. Since
+this column in the database is typed as an integer, this led to a syntax error when trying to add it to the database. To
+prevent this, I needed to put extra checks in place in the function that formats the SQL command to ensure that any nil
+values that would be posted to integer columns were changed to zeros.
 
