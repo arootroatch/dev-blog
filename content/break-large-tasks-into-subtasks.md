@@ -6,7 +6,7 @@ description: When the big picture feels too big, sometimes I don't know where to
 date: 2024-07-29T20:47:05-6:00
 updated: 2024-07-29T20:47:05-6:00
 thumbnail: /img/overwhelm.jpg
-category: Workflows
+category: [Workflows]
 ---
 
 ## Where Do I Even Begin?
