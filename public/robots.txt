@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://arootroatch-blog.vercel.app/sitemap.xml
