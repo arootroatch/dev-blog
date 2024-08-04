@@ -12,7 +12,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const posts = await getPosts();
-  console.log(posts[0].filePath);
   return (
     <html lang='en'>
       <body>

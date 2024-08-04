@@ -4,7 +4,6 @@ import {Sitemap} from "@/lib/interfaces";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getPosts();
-  console.log(posts[0].filePath);
 
   let sitemapData: MetadataRoute.Sitemap = posts.map(post => {
     return {
