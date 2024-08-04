@@ -47,6 +47,14 @@ export interface SearchBarParams {
   posts: Posts[];
 }
 
+export interface Sitemap{
+  url: string;
+  lastModified?: string | Date | undefined;
+  changeFrequency?: "yearly" | "always" | "hourly" | "daily" | "weekly" | "monthly" | "never" | undefined;
+  priority?: number | undefined;
+  // alternates?: { ...; } | undefined;
+}
+
 declare global {
   namespace NodeJS {
     export interface ProcessEnv {

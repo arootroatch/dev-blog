@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
-import { Posts } from "./interfaces";
+import {Posts} from "./interfaces";
 
 export default function getPosts() {
   // get all posts in content folder
@@ -15,7 +15,7 @@ export default function getPosts() {
   // attempted to use compileMDX here instead of gray matter, but it requires await and i can't await inside of map
   const posts = postFilePaths.map((filePath: string) => {
     const source = fs.readFileSync(path.join(POSTS_PATH, filePath));
-    const { content, data } = matter(source);
+    const {content, data} = matter(source);
     const dataObj = JSON.stringify(data);
 
     return {
