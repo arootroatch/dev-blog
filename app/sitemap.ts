@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   let sitemapData: MetadataRoute.Sitemap = posts.map(post => {
     return {
-      url: `https://arootroatch-blog.vercel.app/${post.filePath.replace(/\\.mdx?$/, "")}`,
+      url: `https://arootroatch-blog.vercel.app/${post.filePath.replace(/\.mdx?$/, "")}`,
       lastModified: new Date(post.data.updated),
       changeFrequency: "yearly",
       priority: 0.8,
