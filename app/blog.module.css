@@ -64,6 +64,16 @@
 .main p {
   margin: 1rem 0;
 }
+
+.main iframe{
+  margin: 0 auto;
+  display: block;
+}
+
+.main iframe + p{
+  text-align: center;
+}
+
 .container {
   width: 100vw;
   position: relative;
