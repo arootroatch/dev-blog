@@ -50,6 +50,6 @@ Of course, it's important to keep our methods small and readable, which sometime
 
 Default methods help provide methods that all the implementing classes will use, while private methods allow us to break down default methods into small, manageable helper functions. 
 
-This allows interfaces to act similarly to parent classes, meaning that it is very important to adhere to [Liskov Substitution]() when choosing what methods to include in the interface and which ones should be implemented in the interface.
+This allows interfaces to act similarly to parent classes, meaning that it is very important to adhere to [Liskov Substitution](https://arootroatch-blog.vercel.app/liskov-substitution-principle) when choosing what methods to include in the interface and which ones should be implemented in the interface.
 
 
