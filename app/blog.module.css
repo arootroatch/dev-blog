@@ -74,6 +74,20 @@
   text-align: center;
 }
 
+.main table tr {
+  height: 2.5rem;
+}
+
+.main table {
+  border-collapse: collapse;
+}
+
+.main table td, .main table th {
+  border: 1px solid white;
+  padding: 1rem;
+  text-align: left;
+}
+
 .container {
   width: 100vw;
   position: relative;
