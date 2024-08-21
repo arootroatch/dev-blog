@@ -2,7 +2,6 @@
 import styles from "./navbar.module.css";
 import Link from "next/link";
 import { FaLinkedin, FaGithub, FaXTwitter } from "react-icons/fa6";
-import { IoCloseOutline } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
 import SearchBar from "./SearchBar";
