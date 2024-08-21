@@ -17,7 +17,6 @@ export default function Navbar({ posts }: { posts: Posts[] }) {
     setOpen(!open);
   }
 
-
   return (
     <nav className={styles.nav}>
       <div className={styles.navWrapper}>
