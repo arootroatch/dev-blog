@@ -66,6 +66,10 @@ body {
   background: var(--background-start-rgb);
   font-family: var(--body-font);
   letter-spacing: 0.05rem;
+  font-weight: 500;
+}
+
+.dark body {
   font-weight: 300;
 }
 

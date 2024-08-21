@@ -1,6 +1,6 @@
 .wrapper {
   padding-top: 1.5rem;
-  border-top: 1px solid rgb(0, 0, 0);
+  border-top: 2px solid rgb(0, 0, 0);
   margin: 0 auto;
   max-width: 1400px;
   width: 100%;
@@ -41,16 +41,22 @@
 
 .sortBtnGroup {
   position: absolute;
-  top: 0;
+  top: 0%;
   right: 0;
   border-radius: 5px;
   overflow: hidden;
+  border:2px solid rgba(0, 0, 0, 0.8);
+}
+
+.sortBtnGroup:has(~ .count){
+  top: 15%;
 }
 
 .sortBtn {
   padding: .5rem;
   border-radius: 0;
   border: none;
+  background-color: transparent;
 }
 
 .sortBtn:hover{
@@ -58,11 +64,20 @@
 }
 
 .sortBtn:first-of-type {
-  border-right: 1px solid black;
+  border-right: 2px solid black;
 }
 
 .selectedSort {
-  background-color: #850971;
+  background-color: rgba(133, 9, 113, 0.82);
+  color: white;
+}
+
+:global(.dark) .sortBtnGroup {
+  border:1px solid rgba(255, 255, 255, 0.76);
+}
+
+:global(.dark) .sortBtn:first-of-type {
+  border-right: 1px solid white;
 }
 
 .categoryWrapper {

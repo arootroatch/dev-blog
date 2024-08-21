@@ -3,29 +3,27 @@ import Postcard from "./Postcard";
 import styles from "@/components/postScroller.module.css";
 import {Posts, PostScrollerProps} from "@/lib/interfaces";
 import Link from "next/link";
-// import {useState} from "react";
 import {useState} from "react";
 
 
-
 export default function PostScroller({title, category, allPostsButton, id, count}: PostScrollerProps) {
-  const [sortedCategory, setSortedCategory] = useState(category.sort(sortByTitle));
-  const [sortedByTitle, setSortedByTitle] = useState(true);
-  const [sortedByDate, setSortedByDate] = useState(false);
+  const initalCategory = title == "Recent" ? category.toSorted(sortByDate) : category.toSorted(sortByTitle);
+  const [sortedCategory, setSortedCategory] = useState(initalCategory);
+  const [sortedByTitle, setSortedByTitle] = useState(title != "Recent");
+  const [sortedByDate, setSortedByDate] = useState(title == "Recent");
 
-  function titleSort(){
-    if (!sortedByTitle){
+  function titleSort() {
+    if (!sortedByTitle) {
       setSortedByTitle(true);
       setSortedByDate(false);
-      setSortedCategory(category.sort(sortByTitle));
+      setSortedCategory(category.toSorted(sortByTitle));
     }
   }
 
-  function dateSort(){
+  function dateSort() {
     setSortedByTitle(false);
     setSortedByDate(true);
-    setSortedCategory(category.sort(sortByDate));
-    console.log(sortedCategory);
+    setSortedCategory(category.toSorted(sortByDate));
   }
 
   function sortByTitle(a: Posts, b: Posts) {
@@ -37,11 +35,10 @@ export default function PostScroller({title, category, allPostsButton, id, count
   }
 
   function sortByDate(a: Posts, b: Posts) {
-    const date1 = a.data.date;
-    const date2 = b.data.date;
+    const date1 = new Date(a.data.date).getTime();
+    const date2 = new Date(b.data.date).getTime();
 
-    if (date1 < date2) return -1;
-    else return 1;
+    return date2 - date1;
   }
 
   return (
