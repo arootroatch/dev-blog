@@ -2,7 +2,7 @@
 layout: blog
 title: Testing Database Functions
 author: Alex Root-Roatch
-description: Tests shouldn't assume what's in a database. Eash test should populate and delete the test data each time.
+description: Tests shouldn't assume what's in a database. Each test should populate and delete the test data each time.
 date: 2024-08-29T21:18:26-6:00
 updated: 2024-08-29T21:18:26-6:00
 thumbnail: /img/TDD.webp
