@@ -44,6 +44,8 @@ export default function PostScroller({title, category, allPostsButton, id, count
   return (
     <div className={styles.wrapper}>
       <div className={styles.titleWrapper}>
+        <h2 className={`${styles.title}`} id={id ? id : undefined}>{title}</h2>
+        {count && <div className={styles.count}>{count} article{(count > 1) && "s"}</div>}
         <div className={styles.sortBtnGroup}>
           <button
             onClick={titleSort}
@@ -56,8 +58,6 @@ export default function PostScroller({title, category, allPostsButton, id, count
             Most Recent
           </button>
         </div>
-        <h2 className={`${styles.title}`} id={id ? id : undefined}>{title}</h2>
-        {count && <div className={styles.count}>{count} article{(count > 1) && "s"}</div>}
       </div>
       <div className={styles.categoryWrapper}>
         {sortedCategory.map((post) => (
