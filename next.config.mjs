@@ -11,6 +11,7 @@ const nextConfig = {
         {
           source: '/ttt',
           destination: '/ttt/index.html',
+          permanent: true
         },
       ],
     }
