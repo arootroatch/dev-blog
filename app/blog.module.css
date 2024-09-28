@@ -65,6 +65,10 @@
   margin: 1rem 0;
 }
 
+.main strong {
+  font-weight: 700;
+}
+
 .main iframe{
   margin: 0 auto;
   display: block;
