@@ -5,7 +5,7 @@ author: Alex Root-Roatch
 description: Making sure the amount of kanban bars is no more or less than what fills the screen
 date: 2024-10-04T19:21:08-6:00
 updated: 2024-10-04T19:21:08-6:00
-thumbnail: /img/coding-banner.jpg
+thumbnail: /img/code-banner.jpg
 category: [ Clojure ]
 ---
 
