@@ -130,8 +130,3 @@ If you'd like to dive deeper into Jira's unique syntax or regex in Clojure, I fo
 [Eric Normand's Blog](https://ericnormand.me/mini-guide/clojure-regex)
 
 [This post from Ariel Ortiz](https://arielortiz.info/s202211/tc2037/notes/notes_regex.html)
-
-
-
-
-
