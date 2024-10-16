@@ -9,6 +9,7 @@ thumbnail: /img/clojure-banner.png
 category: [Clojure]
 ---
 
+
 ## Dealing with Nesting
 
 Working with nested data can be tedious and challenging, especially if the goal is to add or update data deep inside a nested structure instead of simply retrieving the data. Luckily, Clojure provides us with `get-in`, `assoc-in`, and `update-in` to make this easier. 
@@ -17,7 +18,7 @@ Working with nested data can be tedious and challenging, especially if the goal 
 
 This Clojure function allows us to easily access data in a nested structure in a readable way. We simply provide a vector of the keys in a map or indices in a vector that we want to access. For example: 
 
-```
+```clojure
 (def developers {:data [{:first-name "Alex"
                          :skills ["Clojure" "React"]}
                         {:first-name "Bob"
@@ -31,7 +32,7 @@ This Clojure function allows us to easily access data in a nested structure in a
 
 This function allows us to add values to a map or vector that is nested rather than at the top level. For example: 
 
-```
+```clojure
 (assoc-in developers [:data 0 :last-name] "Root")
 => {:data [{:first-name "Alex"
             :last-name "Root"
@@ -48,7 +49,7 @@ This function allows us to add values to a map or vector that is nested rather t
 
 This works for inserting entire data structures as well: 
 
-```
+```clojure
 (assoc-in developers [:data 2] {:first-name "Jane"
                                 :skills ["Graphic Design" "Java"]})
 => {:data [{:first-name "Alex"
@@ -65,7 +66,7 @@ Be careful when inserting into a vector though, as inserting at a pre-existing i
 
 This function works like `assoc-in` but allows us to specify exactly what function is performed at the specified place in the data instead of just `assoc`. For example: 
 
-```
+```clojure
 (update-in developers [:data 0 :skills 0] str "Script")
 => {:data [{:first-name "Alex"
             :skills ["ClojureScript" "React"]}
@@ -77,7 +78,7 @@ The selected value, "Clojure," is passed as the first argument to the provided f
 
 This is especially useful for removing items, since there is no `dissoc-in` function: 
 
-```
+```clojure
 (update-in developers [:data 0] dissoc :skills)
 => {:data [{:first-name "Alex"}
            {:first-name "Bob"
