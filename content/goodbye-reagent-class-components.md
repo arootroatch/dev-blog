@@ -171,10 +171,12 @@ To summarize:
 
 - The let bindings in `with-let` act as `:component-did-mount`, only running when to component first renders.
 - The `finally` form acts as `:component-will-unmount`, running when component is no longer rendered.
-- The function body between the bindings and the `finally` acts as `:component-did-mount` and `:component-did-update`,
+- The function body between the bindings and the returned hiccup acts as `:component-did-mount` and `:component-did-update`,
   running each time the component re-renders.
     - Use a conditional check against some internal state to stop it from running on initial mount but still run on each
       subsequent re-render.
+- Make sure all side-effect-inducing code runs before the returned hiccup starts, not inside of it. 
+  - This makes sure that the function remains pure and does not pollute the renderer with unpredictable side effects.   
 
 Thanks to `with-let`, we no longer need to use class components in Reagent to get access to the component lifecycle, nor
 do we need inner functions when dealing with internal state.
