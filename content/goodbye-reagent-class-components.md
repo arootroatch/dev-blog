@@ -184,7 +184,7 @@ do we need inner functions when dealing with internal state.
 ## BONUS: React Function Component Examples
 
 For those more familiar with React function components rather than class components, or those simply curious about
-function components, I want to show what these same examples would look like in React function components.
+function components, I've decided to show what these same examples would look like in React function components.
 
 ### Initial Mount and Subsequent Re-renders
 
