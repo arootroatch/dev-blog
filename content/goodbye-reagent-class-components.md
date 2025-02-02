@@ -19,9 +19,9 @@ in the functional and immutable realm of ClojureScript, we are using Object-Orie
 atoms.
 
 In my crusade to abolish class-components, I had started researching the possibility of calling React hooks like
-`useEffect()` directly in my Reagent applications, which Reagent supports using `:f>` symbol when rendering components (
+`useEffect()` directly in my Reagent applications, which Reagent supports using the `:f>` symbol when rendering components (
 see [this link](https://github.com/reagent-project/reagent/blob/master/doc/ReactFeatures.md) for details). Then, deeper
-down in the Reagent documentation, I found `with-let`. This Reagent looks like Clojure's `let`, with two main
+down in the Reagent documentation, I found `with-let`. This Reagent macro looks like Clojure's `let`, with two main
 differences:
 
 1. The bindings are only evaluated once when the component mounts and not on subsequent re-renders, and
@@ -78,8 +78,7 @@ simply click outside the container. With classes, that looks like this:
        (fn []
          [:<>
            [:button "Click Me"]
-           (when @open?
-             [:div "Look at me! I'm open!"])])})))
+           (when @open? [:div "Look at me! I'm open!"])])})))
 ```
 
 I don't know about you, but seeing this kind of Object-Oriented React in my ClojureScript makes me cringe. Instead, we
@@ -92,8 +91,7 @@ can do this:
                _       (wjs/add-doc-listener "click" handler)]
     [:<>
       [:button "Click Me"]
-        (when @open?
-          [:div "Look at me! I'm open!"])])
+      (when @open? [:div "Look at me! I'm open!"])])
     (finally (wjs/remove-doc-listener "click" handler)))
 ```
 
@@ -205,7 +203,10 @@ export default function timerComponent() {
 
     useEffect(() => {
         setTimeout(setSecondsElapsed(secondsElapsed + 1), 1000);
-    }, [secondsElapsed]) // <- dependency array tells React to run useEffect() everytime secondsElapsed changes
+        
+        // dependency array tells React to run useEffect() 
+        // everytime secondsElapsed changes
+    }, [secondsElapsed]) 
 
     return (
         <div>
@@ -234,7 +235,10 @@ export default function timerComponent() {
 
     useEffect(() => {
         setTimeout(setSecondsElapsed(secondsElapsed + 1), 1000);
-    }, []) // <- empty dependency array tells React to run useEffect() only on initial mount
+        
+        // empty dependency array tells React to run 
+        // useEffect() only on initial mount
+    }, []) 
 
     return (
         <div>
@@ -268,8 +272,12 @@ export default function timerComponent() {
     }
 
     useEffect(() => {
-        if (secondsElapsed > 0) incTimer(); // conditional check prevents running on initial mount
-    }, [secondsElapsed]) // <- dependency array tells React to run useEffect() everytime secondsElapsed changes
+        // conditional check prevents running on initial mount
+        if (secondsElapsed > 0) incTimer(); 
+        
+        // dependency array tells React to run useEffect() 
+        // everytime secondsElapsed changes
+    }, [secondsElapsed]) 
 
     return (
         <div>
