@@ -6,6 +6,15 @@ import Providers from "./providers";
 import getPosts from "@/lib/getPosts";
 import Footer from "@/components/Footer";
 
+export const metadata: Metadata = {
+  title: {
+    default: "Alex Root-Roatch | Dev Blog",
+    template: "%s | Alex Root-Roatch",
+  },
+  description: "Articles about coding and web development, covering Clojure, Java, JavaScript, React, and more.",
+  metadataBase: new URL("https://arootroatch-blog.vercel.app"),
+};
+
 export default async function RootLayout({
   children,
 }: Readonly<{
