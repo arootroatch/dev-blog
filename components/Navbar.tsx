@@ -32,6 +32,7 @@ export default function Navbar({ posts }: { posts: Posts[] }) {
                 <Link
                   onClick={toggleMobileNav}
                   href='https://arootroatch-dev.vercel.app'
+                  target="_blank"
                 >
                   Portfolio
                 </Link>
