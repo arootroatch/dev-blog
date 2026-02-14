@@ -22,6 +22,10 @@ console.log(pageURL);
 
       addIdToH2Elements(h2Elements);
       addH2LinksToSidebar(h2Elements, sidebar);
+
+      return () => {
+        sidebar?.querySelectorAll("a.sidebarLink").forEach((el) => el.remove());
+      };
     },
  []);
   return (

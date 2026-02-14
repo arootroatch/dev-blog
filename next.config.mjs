@@ -2,6 +2,9 @@
 
 const nextConfig = {
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  images: {
+    qualities: [5, 20, 75],
+  },
   async rewrites(){
     return {
       beforeFiles: [
