@@ -14,9 +14,10 @@ import matter from "gray-matter";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const markdown = getPost(params.slug);
+  const { slug } = await params;
+  const markdown = getPost(slug);
   const { data } = matter(markdown);
   const frontmatter = data as Frontmatter;
 
@@ -31,7 +32,7 @@ export async function generateMetadata({
       publishedTime: frontmatter.date,
       modifiedTime: frontmatter.updated,
       images: [frontmatter.thumbnail],
-      url: `https://arootroatch-blog.vercel.app/${params.slug}`,
+      url: `https://arootroatch-blog.vercel.app/${slug}`,
     },
   };
 }
@@ -47,9 +48,10 @@ export async function generateStaticParams() {
 export default async function PostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const markdown = getPost(params.slug);
+  const { slug } = await params;
+  const markdown = getPost(slug);
   const { content, frontmatter } = await compileMDX<Frontmatter>({
     source: markdown,
     options: { parseFrontmatter: true },
@@ -77,7 +79,6 @@ export default async function PostPage({
   const posts = getPosts();
   const recent = getMostRecentPosts(posts, 10);
 
-  const slug = params.slug;
   const pageURL = `https://arootroatch-blog.vercel.app/${slug}`;
 
   return (

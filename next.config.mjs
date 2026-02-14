@@ -1,6 +1,3 @@
-
-import withMDX from '@next/mdx'
-
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
@@ -11,11 +8,10 @@ const nextConfig = {
         {
           source: '/ttt',
           destination: '/ttt/index.html',
-          permanent: true
         },
       ],
     }
   }
 };
 
-export default withMDX(nextConfig);
+export default nextConfig;

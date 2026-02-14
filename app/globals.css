@@ -179,7 +179,7 @@ section:nth-of-type(2n) {
 
 .btn:hover {
   /* box-shadow: var(--button-shadow-hover); */
-  color: var(var(--button-text-hover));
+  color: var(--button-text-hover);
   transform: scale(105%);
 }
 
