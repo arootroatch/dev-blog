@@ -30,13 +30,13 @@ It takes required arguments and two optional arguments:
 
 Argument number 2 was the secret sauce for this problem. You see, without providing a `step` amount, `partition` automatically steps based on the length of the partition. For example: 
 
-```
+```clojure
 user=>(partition 4 (range 20))
 ((0 1 2 3) (4 5 6 7) (8 9 10 11) (12 13 14 15) (16 17 18 19))
 ```
 That definitely wouldn't work for the Euler problem! But if we tell `partition` to only step one at a time:
 
-```
+```clojure
 user=>(partition 4 1 (range 6))
 ((0 1 2 3) (1 2 3 4) (2 3 4 5))
 ```
@@ -47,7 +47,7 @@ Another added bonus? The returned sequence is a lazy sequence, so the values are
 
 And it's *way* better than this:
 
-```
+```clojure
 (defn ->subvecs-of-length [target coll]
   (if (= (count coll) target)
     [coll]
@@ -58,7 +58,7 @@ And it's *way* better than this:
 
 There's also `partition-by`, which takes a callback function the way `map` and `filter` do. This allows us to be even choosier about how things are partitioned. For example: 
 
-```
+```clojure
 user=> (partition-by odd? [1 1 1 2 2 3 3])
 ((1 1 1) (2 2) (3 3))
 

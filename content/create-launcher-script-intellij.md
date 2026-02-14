@@ -20,7 +20,7 @@ This guide is specific to macOS. For other operating systems, see the [IntelliJ 
 
 macOS natively provides a way to open files and directories from the command line via the `open` command. Opening a directory will display the directory contents in a new Finder window, and opening a file will open it in the default application for that file type. Passing the `-a` flag, though, allows us to open a specific application, and the `-n` flag will open a new window of that program even if it's already running. So the command to open a specific directory in IntelliJ looks like this: 
 
-```
+```bash
 open -na "IntelliJ IDEA.app" ~/path/to/my-project-directory
 ```
 
@@ -32,7 +32,7 @@ That's not super convenient to type, and the whole goal here is convenience. The
 
 First, let's create our new file in the `bin` directory where all of our command line commands are stored. In your terminal, type: 
 
-```
+```bash
 touch /usr/local/bin/idea
 ```
 
@@ -44,7 +44,7 @@ To edit our file without leaving the terminal, we will use `nano`. If you're in 
 
 And now your terminal is magically a text editor! Copy and paste the following code into the text editor window: 
 
-```
+```bash
 #!/bin/sh
 
 open -na "IntelliJ IDEA.app" --args "$@"
@@ -60,7 +60,7 @@ Now we should be able to type `idea` followed by the path to our project directo
 
 If you get an error saying that you were denied due to permissions, you need to grant the current user execute permissions to our new script file. Type: 
 
-```
+```bash
 chmod +x /usr/local/bin/idea
 ```
 
@@ -70,7 +70,7 @@ Try again, and it should work!
 
 Remember how that `"$@"` allows us to input multiple arguments? Well, not only can we open our project directory or specific file in IntelliJ from the command line, we can open a specific file *at a specific line.* For example: 
 
-```
+```bash
 idea --line 42 ~/MyProject/scripts/numbers.js
 ```
 

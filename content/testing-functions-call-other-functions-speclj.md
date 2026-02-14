@@ -14,7 +14,7 @@ category:
 
 Earlier today, I found myself faced without an interesting scenario: in my tic-tac-toe game, I had a multimethod that called different logic for when the computer played its turn based on the level of difficulty selected by the user. Each `defmethod` assigned the resulting move from either `find-eay-move`, `find-medium-move`, or `find-best-move` to a `let` binding called `move`, the supplied that `move` to the `play-bot-turn` function, which updates the game board. 
 
-```
+```clojure
 (defmethod player/take-turn 2 [{:keys [board player]}]
   (let [move (find-medium-move board)]
     (play-bot-move board move player)))
@@ -28,7 +28,7 @@ Stubs are essentially placeholders for parts of our code. By creating a stub and
 
 So, at the top of my tests inside the `describe`, I put: 
 
-```
+```clojure
 (with-stubs)
 (redefs-around [find-easy-move (stub :find-easy-move)
                 find-medium-move (stub :find-medium-move)
@@ -37,7 +37,7 @@ So, at the top of my tests inside the `describe`, I put:
 
 This tells the tests that I'm using stubs and then redefines the "find move" functions as stubs that are named with keywords that mimic the original function name. Now we can call our function in our test like we normally would, but instead of testing the return value, we test that it invoked the expected stub with the expected arguments. 
 
-```
+```clojure
 (it "calls find-medium-move"
   (player/take-turn {:level 2 :board [:x 2 3 4 5 6 7 8 9] :player :o})
   (should-have-invoked :find-medium-move {:with [[:x 2 3 4 5 6 7 8 9]]})
@@ -45,7 +45,7 @@ This tells the tests that I'm using stubs and then redefines the "find move" fun
 
 `redefs-around` is a super convenient trick that Speclj provides us with that tells our tests to use these stub bindings for all of our tests. Without it, we would need to use `with-redefs` in every single test we wanted to use our stubs in, like so:
 
-```
+```clojure
 (it "displays bot-move to user"
    (with-redefs [ui/display-bot-move-message (stub :display-bot-move-message)]
       (play-bot-move [1 2 3 4 5 6 7 8 9] 5 :o)
@@ -56,7 +56,7 @@ This tells the tests that I'm using stubs and then redefines the "find move" fun
 
 Great, now we're testing that it's invoking the right function with the right arguments. However, now we're getting an error that the next line of our function is broken. Let's take a look:
 
-```
+```clojure
 (defmethod player/take-turn 2 [{:keys [board player]}]
   (let [move (find-medium-move board)]
     (play-bot-move board move player)))
@@ -70,7 +70,7 @@ So how do we fix this? We have a few options.
 
 If we go back to where we created our stubs, we can make our stubs invoke a function of our choosing while still allowing us to test `should-have-invoked`.
 
-```
+```clojure
 (redefs-around [find-easy-move (stub :find-easy-move {:invoke find-easy-move})
 ```
 

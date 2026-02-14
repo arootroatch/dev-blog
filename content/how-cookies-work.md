@@ -35,7 +35,7 @@ Let's illustrate the point using the example of specifying light mode of dark mo
 
 Say the first time you visit a website, you click a button in the menu bar turning the website to dark mode. In response, the whole website re-renders to dark mode and the server sends you a cookie to say "Okay, I see you like dark mode. Please remind me of that every time you visit." The HTTP response headers from the server might look something like this: 
 
-```
+```text
 HTTP/1.1 200 OK
 Content-Type: text/html
 Set-Cookie: presentation=dark
@@ -45,7 +45,7 @@ Set-Cookie: presentation=dark
 
 Then with each subsequent request your browser makes to the site, it sends the cookie back so you don't have to keep hitting the "dark mode" button. The request headers might look something like this: 
 
-```
+```text
 GET www.mycoolsite.com HTTP/1.1
 Cookie: presentation=dark
 ```

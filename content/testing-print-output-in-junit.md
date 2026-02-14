@@ -13,7 +13,7 @@ category: [Java]
 
 In order to re-route printing from going to the console, we need something else to send that data to and store it for access later. This can be done with a `ByteArrayOutputStream`: 
 
-```
+```java
 ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 ```
 
@@ -21,7 +21,7 @@ ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
 At the end of the tests, we'll want to set standard out back to the console to restore expected functionality. Let's save the current output configuration to a variable to access later before redefining standard out: 
 
-```
+```java
 final PrintStream originalOut = System.out;
 ```
 
@@ -29,7 +29,7 @@ final PrintStream originalOut = System.out;
 
 Now we re-route standard out from the console to the `outContent` output stream we created. We need to create a `PrintStream` that prints to `outContent` and send standard out to that: 
 
-```
+```java
 System.setOut(new PrintStream(outContent));
 ```
 
@@ -37,7 +37,7 @@ System.setOut(new PrintStream(outContent));
 
 The result of `System.out.print` will now be stored to `outContent` as an array of bytes. To test that the content is what it should be, it needs to be converted to a string first: 
 
-```
+```java
 assertTrue(outContent.toString().contains("Hello!"));
 ```
 
@@ -45,7 +45,7 @@ assertTrue(outContent.toString().contains("Hello!"));
 
 After the tests run, it's important to restore expected functionality by setting standard out back to the console. This is where the `originalOut` variable comes in: 
 
-```
+```java
 System.setOut(originalOut);
 ```
 

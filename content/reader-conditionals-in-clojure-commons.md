@@ -31,7 +31,7 @@ Standard reader conditionals behave like a `cond` block, using the keywords `:cl
 executed. The syntax is a bit simpler though; it simply consists of a pound sign and a question mark `#?` followed by
 parenthesis.
 
-```
+```clojure
 (defn with-keys [coll]
   #?(:clj  coll
      :cljs (util/with-react-keys coll)))
@@ -53,8 +53,8 @@ with Java, but ClojureScript interops with JavaScript.
 Splicing conditionals are used for splicing a list into their containing form. Their syntax simply adds an at sign `@`
 after the question mark `?`.
 
-```
-(defn build-list [] 
+```clojure
+(defn build-list []
       (list #?@(:clj  [5 6 7 8]
                 :cljs [1 2 3 4])))
 
@@ -71,8 +71,8 @@ Notice that the individual numbers in the list are passed as separate arguments 
 important difference between splicing conditionals and standard conditionals. A standard conditional would result in
 this:
 
-```
-(defn build-list [] 
+```clojure
+(defn build-list []
       (list #?(:clj  [5 6 7 8]
                :cljs [1 2 3 4])))
 

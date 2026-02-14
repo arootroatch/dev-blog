@@ -19,7 +19,7 @@ to Jake Ogden, Alex Jensen, and Brandon Correa for the guidance and troubleshoot
 The first step was to set up my project's directory structure to accommodate ClojureScript. My file tree before adding
 ClojureScript was:
 
-```
+```text
 ├── spec
 │   ├── tic_tac_toe
 │   │   ├── [test files and packages]
@@ -35,7 +35,7 @@ With adding ClojureScript, I'll be dealing with three different Clojure extensio
 and `.cljc` for Clojure Commons, which will be code that is shared between the ClojureScript version of the app and the
 terminal and desktop versions. It's important to keep all of this organized, so I changed my directory structure to:
 
-```
+```text
 ├── spec
 │   ├── clj
 │   │   ├── tic_tac_toe
@@ -67,7 +67,7 @@ Sources Root folders.
 
 To make sure the project knows where to look for the files, the new paths need to be added to `deps.edn`:
 
-```
+```clojure
 {
 :paths     ["src/clj" "src/cljs" "src/cljc"]
 :aliases   :test {:extra-paths ["spec/clj" "spec/cljs" "spec/cljc"]}
@@ -82,7 +82,7 @@ The `cljc` and `cljs` folders were empty at this point and all of my project was
 The next step was bringing in the new dependencies needed for writing, compiling, and testing ClojureScript. I added the
 following to my `deps.edn`:
 
-```
+```clojure
 {
  :deps      {
              cljsjs/react                      {:mvn/version "17.0.2-0"}
@@ -120,7 +120,7 @@ full `deps.edn` file.
 Before being able to use Scaffold, though, I needed to create a `resources` directory with a configuration file for
 Scaffold to use. At the root of the project directory, I added:
 
-```
+```text
 ├── resources
 │   ├── config
 │   │   ├── cljs.edn
@@ -128,7 +128,7 @@ Scaffold to use. At the root of the project directory, I added:
 
 In that configuration file, I put;
 
-```
+```clojure
 {:ns-prefix     "tic_tac_toe"
  :ignore-errors ["goog/i18n/bidi.js"]
  :development   {:cache-analysis true
@@ -162,7 +162,7 @@ tic_tac_toe_dev.js". Both the folder and the file will be created automatically 
 In order for Clojure to have access to the resources folder, I needed to add it to my paths in `deps.edn`. Here's all
 the paths up to this point:
 
-```
+```clojure
 :paths     ["src/clj" "src/cljs" "src/cljc" "resources"]
 ```
 
@@ -174,7 +174,7 @@ I created `src/cljs/tic_tac_toe/main.cljs` and `spec/cljs/tic_tac_toe/main_spec.
 
 #### `main.cljs`
 
-```
+```clojure
 (ns tic-tac-toe.main
   (:require [reagent.dom :as rdom]
             [c3kit.wire.js :as wjs]))
@@ -194,17 +194,17 @@ an `href` pointing to the root of the directory.
 The `main` function takes in a component and renders it to the DOM by selecting an empty `div` with an `id` of "app" and
 injecting the rendered JavaScript and HTML into the page. It's the ClojureScript equivalent to this:
 
-```
+```jsx
 ReactDOM.createRoot(document.getElementById('app')).render(
   <React.StrictMode>
     <App />
- </React.StrictMode>  
+ </React.StrictMode>
 )
 ```
 
 #### `main_spec.cljs`
 
-```
+```clojure
 (ns tic-tac-toe.main-spec
   (:require-macros [speclj.core :refer [should= it describe before]]
                    [c3kit.wire.spec-helperc :refer [should-not-select should-select]])
@@ -212,7 +212,7 @@ ReactDOM.createRoot(document.getElementById('app')).render(
     [speclj.core]
     [c3kit.wire.spec-helper :as wire]
     [tic-tac-toe.main :as sut]))
-    
+
 (describe "main"
   (wire/with-root-dom)
   (before
@@ -242,7 +242,7 @@ the code into, as well as this being a file that I could open in my browser and 
 
 Inside of `resources/public`, I added an `index.html` with the following contents:
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -277,19 +277,19 @@ Inside of `resources/public`, I added an `index.html` with the following content
 
 Let's talk about a few specific lines:
 
-```
+```html
 <script src="./cljs/tic_tac_toe_dev.js" type="text/javascript"></script>
 ```
 
 This is the filename that was defined in `config/cljs.edn` with the compiled JavaScript for running the tests.
 
-```
+```html
 <script type="text/javascript">goog.require("tic_tac_toe.main")</script>
 ```
 
 This is pulling in the `tic_tac_toe.main` namespace from ClojureScript where the `main` function is.
 
-```
+```html
 <script type="text/javascript">
   tic_tac_toe.main.main()
 </script>

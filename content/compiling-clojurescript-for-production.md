@@ -38,7 +38,7 @@ I didn't get the desired outcome with this, and I'm still not quite sure why.
 
 Finally it was time to create a production build and deploy. First, I needed to add production settings to my configuration in `resources/config/cljs.edn`: 
 
-```
+```clojure
  :production    {:cache-analysis false
                  :optimizations  :advanced
                  :output-dir     "out"

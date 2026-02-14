@@ -21,7 +21,7 @@ sequence grouped by common return values. For example, the predicate function th
 returns a boolean. When putting this same function into `group-by`, the result is a map with two keys, `true`
 and `false`, the value of each being a sequence of the elements that yielded each result.
 
-```
+```clojure
 (group-by even? [1 2 3 4 5 6 7 8 9])
 
 => {true  [2 4 6 8]
@@ -33,7 +33,7 @@ and `false`, the value of each being a sequence of the elements that yielded eac
 Pretty much any function can be used with `group-by`, though, not just predicates. For example, if we wanted to sort a
 collection of words by their length:
 
-```
+```clojure
 (group-by count ["the" "quick" "brown" "fox" "jumps" "over" "the" "lazy" "dog"])
 
 => {3 ["the" "fox" "the" "dog"]
@@ -46,7 +46,7 @@ collection of words by their length:
 And of course, since code is all just data in functional programming, sets can be used as functions as well to test
 membership:
 
-```
+```clojure
 (group-by set ["meat" "mat" "team" "mate" "eat" "tea"])
 
 => {#{\a \e \m \t} ["meat" "team" "mate"],

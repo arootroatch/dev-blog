@@ -16,7 +16,7 @@ In a previous blog post, I discussed [creative ways to use map](https://arootroa
 
 The function in question was drawing the tic-tac-toe grid to the canvas using a `create-square` function that I had written. It takes four parameters: the X and Y coordinates of the square on the canvas, the size of the square, and the game board. Here's before refactoring:
 
-```
+```clojure
 (defn three-board [x y size board]
   (create-square x y size (nth board 0))
   (create-square (+ x size) y size (nth board 1))
@@ -30,7 +30,7 @@ The function in question was drawing the tic-tac-toe grid to the canvas using a 
 ```
 The X and Y values are increased by the same amounts, but at different times, while the index of the board is incremented by 1 each line. At closer inspection, the X values are increased first, creating each of the three columns of the first row. Then the X values are reset, the Y value is increased to the next row, and the X values are increased again in the same way as before. This pattern allows for a list comprehension:
 
-```
+```clojure
 (defn three-board [x y size board]
   (for [row [0 1 2]
         col [0 1 2]]

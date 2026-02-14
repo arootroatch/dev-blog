@@ -18,7 +18,7 @@ global `def` or a let binding to be used later in the code.
 Get requests in ClojureScript are a little trickier. Since ClojureScript compiles to JavaScript, we are dealing with
 JavaScript's async/await structure. Get requests using `cljs-http` have a little more going on:
 
-```
+```clojure
 (defn get-data []
   (go (let [response (<! (http/get "https://api.github.com/users"))]
            (prn (:status response)))))

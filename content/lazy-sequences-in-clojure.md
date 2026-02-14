@@ -14,7 +14,7 @@ category:
 
 As we've talked about in previous articles, values in Clojure are immutable. When it comes to programmatically creating datasets, this might feel like an obstacle for those that are accustomed to incrementally populating an array as they iterate through a for loop. Consider creating an array of `nth` items in JavaScript: 
 
-```
+```javascript
 function createSeqArray(length) {
     let arr = []
     for (let i = 0; arr.length<length; i++){
@@ -27,7 +27,7 @@ createSeqArray(10) => [0,1,2,3,4,5,6,7,8,9]
 ```
 But the way Clojure allows us to do these things is even easier. 
 
-```
+```clojure
 (range 10)
 user=> [0 1 2 3 4 5 6 7 8 9]
 ```
@@ -46,7 +46,7 @@ Clojure has multiple ways to generate and work with lazy sequences:
 
 At this point you might be thinking, "Hold on there, won't typing code that generates values infinitely crash our computer?" It's a logical question, but when working with lazy sequences, the answer generally is no &mdash; if you're not in a REPL. What makes them lazy is that they are not *immediately* evaluated; the values aren't available until we actually ask Clojure to do something with those values. For example: 
 
-```
+```clojure
 (take 10 (repeat 1))
 user=> (1 1 1 1 1 1 1 1 1 1)
 ```

@@ -28,7 +28,7 @@ Hash maps are unordered, meaning that the order of elements in the collection ca
 ordered in which they were added. For example, adding the number 0-9 to a HashMap in Java as key value pairs
 of `{"0"=0}` comes back in numerical order regardless of the order the entries are inserted:
 
-```
+```java
 void addNKeys(HashMap<String, Integer>map, int n){
     for (int i = 9; i >= 0; i--){
         map.put(Integer.toString(i), i);
@@ -49,7 +49,7 @@ void addNKeys(HashMap<String, Integer>map, int n){
 However, when inserting them using the spelled out names of the numbers as the keys, they come back in an unexpected
 order:
 
-```
+```text
 {nine=9, six=6, four=4, one=1, seven=7, ten=10, two=2, three=3, five=5, eight=8}
 ```
 
@@ -61,7 +61,7 @@ an important aspect of how hash maps are stored.
 Hash maps are an interesting combination of arrays and linked lists. Looking at the Java source code, we see that each
 key-value pair in the map is stored as a node:
 
-```
+```java
 static class Node<K,V> implements Map.Entry<K,V> {
     final int hash;
     final K key;
@@ -78,7 +78,7 @@ static class Node<K,V> implements Map.Entry<K,V> {
 
 This bears a strong resemblance to linked lists:
 
-```
+```java
 private static class Node<E> {
     E item;
     Node<E> next;
@@ -98,7 +98,7 @@ But what about `this.hash`?
 
 Continuing to scroll down the source code reveals an array of key-value nodes:
 
-```
+```java
 transient Node<K,V>[] table;
 ```
 

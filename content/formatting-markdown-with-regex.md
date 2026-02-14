@@ -67,7 +67,7 @@ To do the kind of swapping in place of certain symbols that was needed here, `Cl
 
 One tricky thing about this was accounting for scenarios in which symbols might also be typed inside of paragraphs as normal text and should not be inadvertently converted. For example, a pound sign being typed in the middle of the paragraph should not be turned into the text `h1. ` when formatting the text for Jira. To help with this, I decided to split the description by every new line character so that I had a list where every element in the list was a separate element in the description, such as a paragraph or a heading. This allowed me to specifically check the beginning and ending of a line and only swap a pound sign for `h1. ` if it was at the start of the line and followed by a space. Since `string/replace` doesn't do anything if there's no match for the regex, I could simply create a threaded form for all the headings. 
 
-```
+```clojure
 (defn- ->epic-heading [line]
   (-> line
       (string/replace #"^h6. " "###### ")
@@ -91,7 +91,7 @@ One tricky thing about this was accounting for scenarios in which symbols might 
 
 Turning Markdown into a single-level ordered list in Jira was relatively easy after relearning some regex, since every list item that's not indented simply begins with a single pound sign: 
 
-```
+```clojure
 (string/replace line #"^[0-9]+. " "# ")
 ```
 
@@ -99,7 +99,7 @@ This regex says "one or more digits between 0 and 9 followed by a period and a s
 
 Turning ordered lists from Jira into Markdown was a different story altogether. In order to convert any number of single pound signs into the appropriate number, I first took the list that was the description split by every newline character and filtered it by lines that began with a pound sign followed by a space. The `Clojure.string/starts-with?` function proved very useful for this. Then, convert each pound sign into the appropriate number, I used `map-indexed` and `string/replace` together. Then I used `string/join` to turn the resulting list into one string where each element was separated by a newline character. 
 
-```
+```clojure
 (defn- ->epic-ordered-list [list]
   (string/join "\n" (map-indexed (fn [idx line] (string/replace line #"# " (str (inc idx) ". "))) list)))
 ```
@@ -108,7 +108,7 @@ Turning ordered lists from Jira into Markdown was a different story altogether. 
 
 With the above ordered list formatted into Markdown, another challenge arose: inserting this chunk of the description back into the whole description in the proper place. To do this, I first needed to find the index where the unformatted ordered list started, for which I used the Java interop `.indexOf`. Then after counting how many items were in the list, I could then grab everything before the list, everything after the list, and concatenate it all together with the new list in the middle. 
 
-```
+```clojure
 (defn- replace-list-with-formatted [formatted-lines epic-ordered-list index-of-list length]
   (let [before (take index-of-list formatted-lines)
         after  (drop (+ index-of-list length) formatted-lines)]

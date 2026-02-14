@@ -15,7 +15,7 @@ This week, I've been working on implementing three different sorting algorithms:
 
 While figuring out why an algorithm wasn't working as expected, I reached for the trusty `System.out.print()` to see what was happening. I was surprised to see, instead of a nice print out of all the numbers in the array surrounded by square brackets, something like this:
 
-```
+```text
 main.MyArrayList@80169cf
 ```
 
@@ -25,7 +25,7 @@ This is the package name, the class name followed by "@", and the [System.identi
 
 In order to view the contents of the array, I wrote a quick function to print each element in the array to the console on a single line. 
 
-```
+```java
 public static void printArray(MyList<Integer> arr) {
   for (int i = 0; i < arr.size(); i++)
     System.out.print(arr.get(i) + " ");
@@ -43,7 +43,7 @@ A little digging into the documentation revealed that the print function, when g
 
 My implementation of my array list, however, didn't include a `toString()` method, so I added one: 
 
-```
+```java
 public String toString() {
   if (size == 0) return "[ ]";
     
@@ -58,7 +58,7 @@ public String toString() {
 
 Now this works: 
 
-```
+```java
 System.out.println(arr)
 
 => [ 1 2 3 4 5 6 7 8 9 ]

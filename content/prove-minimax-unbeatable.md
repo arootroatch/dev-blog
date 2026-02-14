@@ -36,7 +36,7 @@ Then, I had a function called `unbeatable?` that initialized a binding `lost?` w
 
 Great! Now with that all written, I could write a test and prove once and for all that my minimax was unbeatable! Eagerly, I wrote: 
 
-```
+```clojure
 (it "wins or ties every possible game"
     (should= true (unbeatable?)))
 ```

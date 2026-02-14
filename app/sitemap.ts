@@ -1,6 +1,7 @@
 import {MetadataRoute} from 'next'
 import getPosts from "@/lib/getPosts";
 import {Sitemap} from "@/lib/interfaces";
+import parseDate from "@/lib/parseDate";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getPosts();
@@ -8,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   let sitemapData: MetadataRoute.Sitemap = posts.map(post => {
     return {
       url: `https://arootroatch-blog.vercel.app/${post.filePath.replace(/\.mdx?$/, "")}`,
-      lastModified: new Date(post.data.updated),
+      lastModified: parseDate(post.data.updated),
       changeFrequency: "yearly",
       priority: 0.8,
     }

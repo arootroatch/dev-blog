@@ -24,9 +24,9 @@ Quil automatically loops between `draw-state` and `update-state` at the same int
 
 In short, yes, it absolutely was possible and no, it didn't make minimax take 15 turns in a row. All I needed to do was add a state boolean to track if it was the human's turn or not, which I called `human?`. This was toggled to `false` after the human took their turn. In `update-state`, if `human?` was false while the game was `:in-progress`, it called the AI as the result of updating the board in state. For example:
 
-```
+```clojure
 (cond
-  (and (= :in-progress game-state) 
+  (and (= :in-progress game-state)
        (not human?)) (assoc state :board (ai-turn state)))
 ```
 

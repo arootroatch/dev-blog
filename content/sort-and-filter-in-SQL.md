@@ -22,7 +22,7 @@ drawbacks:
 Sorting, filtering, and limiting the amount of results can actually be done right in the SQL query. This means I can use
 SQL to get the one number of the most recent game ID and nothing else. Here's before sorting in SQL: 
 
-```
+```clojure
 (let [query (jdbc/execute! ds ["SELECT id FROM games"])
     ids (map #(:games/id %) query)
     last-id (->> ids sort last)]
@@ -31,7 +31,7 @@ last-id))
 
 And after:
 
-```
+```clojure
 (defn- get-last-id [ds]
   (let [query (jdbc/execute! ds ["SELECT id FROM games ORDER BY id DESC LIMIT 1"])]
     (-> query first :games/id)))

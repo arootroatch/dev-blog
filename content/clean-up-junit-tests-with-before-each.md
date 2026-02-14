@@ -14,14 +14,14 @@ category:
 
 This past week, I've been practicing the Coin Changer Kata as a way of getting more familiar with Java. I chose to have the `makeChange()` method return a hashmap where each key was a string denoting the coin and each value was the corresponding quantity of each coin. For example, 16 cents would return `{"dimes": 1; "nickels": 1; "pennies": 1;}`. Since hashmaps can't simply be typed in Java and instead have to be manipulated using methods provide by Java's `Map` interface, each of my JUnit tests looked something like this:
 
-```
+```java
 @Test
 void oneDimeOneNickelOnePenny() {
     coins.put("dimes", 1);
     coins.put("nickels", 1);
     coins.put("pennies", 1);
     assertEquals(coins, coinChanger.makeChange(0.16));
-}    
+}
 ```
 
 The hashmap `coins` is declared at the top of the class so that it can be reused easily for each test. 
@@ -36,7 +36,7 @@ To address this, I had added `coins.clear()` to the beginning of every test befo
 
 To clean this up, JUnit provides the `@BeforeEach` annotation. Function with this annotation will run before every individual test. The top of my test class could be refactored to: 
 
-```
+```java
 class CoinChangerTest {
     HashMap<String, Integer> coins;
 
@@ -44,7 +44,7 @@ class CoinChangerTest {
     void setup() {
         coins = new HashMap<>();
     }
-    
+
     all my tests...
 }
 ```
@@ -53,7 +53,7 @@ class CoinChangerTest {
 
 Along with that, it was also pointed out to me today that comparing maps is dangerous business, as two maps that appear to be the same may not actually evaluate to being equal. So instead of filling the hashmap in the tests in order to then compare that complete hashmap with the hashmap being returned from `makeChange()`, like I was doing above, it's much safer to test the values from specific keys in the hashmap returned from `makeChange()`, like this:
 
-```
+```java
 @Test
 void fourQuartersOneDimeOneNickelOnePenny() {
     coins = coinChanger.makeChange(1.16);

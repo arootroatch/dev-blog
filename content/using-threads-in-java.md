@@ -25,7 +25,7 @@ There are four ways create a new thread and execute code in that thread:
 
 One way to create a new thread is to create a class that extends the built-in `Thread` class and override the `run` method. The `Thread` class itself implements the Java `Runnable` interface, so the `start()` method will call `run()`.
 
-```
+```java
 public class Main extends Thread {
   public void run() {
     System.out.println("This code is running in a thread");
@@ -40,7 +40,7 @@ thread.start();
 
 Another way to create a thread is to implement the `Runnable` interface directly and passing an instance of the class into the `new Thread()` constructor, followed by calling `start()` on the thread.  
 
-```
+```java
 public class Main implements Runnable {
   public void run() {
     System.out.println("This code is running in a thread");
@@ -58,7 +58,7 @@ This is slightly more verbose and still depends on the `Thread` class, but perha
 
 A more succinct way to create a thread (and perhaps my favorite) is to use a lambda. 
 
-```
+```java
 public void makeThread(){
     new Thread(() -> {
       System.out.println("This code is running in a thread");
@@ -72,7 +72,7 @@ Lambdas allow us to create functions right in the constructor or pass function c
 
 Method references are like even more succinct lambda expressions. They allow us to refer to a method inside an instance of a class. If the method being called in the thread is part of the same class the thread is being created inside, the `this` keyword can be used.  
 
-```
+```java
 private void print(){
     System.out.println("This code is running in a thread");
 }

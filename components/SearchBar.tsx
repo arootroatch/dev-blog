@@ -1,12 +1,14 @@
 import React, {useEffect, useState} from "react";
 import {useCombobox} from "downshift";
 import styles from "./searchBar.module.css";
-import {SearchBarParams} from "@/lib/interfaces";
+import {SearchBarParams, Posts} from "@/lib/interfaces";
 import Fuse from "fuse.js";
 import Link from "next/link";
+import {useRouter} from "next/navigation";
 import {IoIosSearch} from "react-icons/io";
 
 export default function SearchBar({posts}: SearchBarParams) {
+  const router = useRouter();
   const [inputItems, setInputItems] = React.useState(posts);
   const fuse = new Fuse(posts, {
     keys: ["data.title", "data.category"],
@@ -47,10 +49,19 @@ export default function SearchBar({posts}: SearchBarParams) {
     closeMenu
   } = useCombobox({
     items: inputItems,
+    itemToString: (item: Posts | null) => item ? item.data.title : "",
     onInputValueChange: ({inputValue}) => {
       let search = fuse.search(inputValue);
       let searchResults = search.map((result) => result.item);
       setInputItems(searchResults);
+    },
+    onSelectedItemChange: ({selectedItem}) => {
+      if (selectedItem) {
+        const slug = selectedItem.filePath.replace(/\.mdx?$/, "");
+        clearInputAndCloseMenu();
+        closeSearch();
+        router.push(`/${slug}`);
+      }
     },
   });
   return (

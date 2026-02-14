@@ -14,13 +14,13 @@ category:
 
 "Arity" refers to the number of arguments a function takes. It is the noun form of the suffix "-ary" in the terms "unary," "binary," and "ternary," used to describe functions that take one, two, or three arguments, respectively. In Clojure, we can compose functions that can have completely different function bodies based on the number of arguments passed in, meaning one function can simultaneously be unary, binary, ternary, or even octary (eight functions). This is referred to as *multi-arity*. Here's what it looks like:  
 
-```
+```clojure
 (defn say-hello
   ([] "Howdy, y'all!")
   ([name] (str "Howdy, " name "!"))
   ([name1 name2] (str "Howdy, " name1 " and " name2 "!"))
   ([name1 name2 name3] (str "Howdy, " name1 ", " name2 ", and " name3 "!")))
-  
+
 
 user=> (say-hello)
 "Howdy, y'all!"
@@ -39,7 +39,7 @@ As you can see, if `say-hello` is called without arguments, the function returns
 
 It's also important to note that if we want one of our function bodies to be *variadic*, meaning it can take an unspecified number of arguments, the other function bodies cannot have parameters than the *variadic* function body. So if we want our function to accept two or more names instead of topping out at three, we would need to refactor to this: 
 
-```
+```clojure
 (defn say-hello
   ([] "Howdy, y'all!")
   ([name] (str "Howdy, " name "!"))
@@ -56,7 +56,7 @@ Multimethods allow us to have a function that takes a set number of arguments bu
 
 Let's take a looks at these examples adapted from the Clojure Koans: 
 
-```
+```clojure
 (defmulti diet (fn [x] (:eater x)))
 (defmethod diet :herbivore [a] (apply str (:name a) " eats veggies." ))
 (defmethod diet :carnivore [a] (apply str (:name a) " eats animals." ))
@@ -81,7 +81,7 @@ Here we see a multimethod being defined called `diet`. When we pass in a map wit
 
 But wait... why would do that when we could just use a case statement? Isn't that the same thing? Take a look: 
 
-```
+```clojure
 (defn diet [x]
   (let [diet (:eater x)
         name (:name x)]

@@ -20,7 +20,7 @@ So what is recursion? The shortest way to explain it is that it is **when a func
 
 So, what's this all look like and why would we use it? Consider this JavaScript example: 
 
-```
+```javascript
 function countDownToOne(count) {
     console.log(count);
 
@@ -44,7 +44,7 @@ Here, we see a function that will print the value of `count` to the console, dec
 
 While that may seem understandable enough, it gets a little trickier to understand when the recursive call happens inside of one of the function's operations. Consider this JavaScript example of calculating factorials:
 
-```
+```javascript
 function factorial(n){
   if(n <= 1){
     return n;
@@ -56,7 +56,7 @@ function factorial(n){
 
 And the same example written in Clojure:
 
-```
+```clojure
 (defn factorial [n]
   (if (<= n 1)
     n
@@ -76,7 +76,7 @@ As you can see, for whatever number we input to the function, we will have the s
 
 To avoid stack overflow, we can take advantage of something called *tail call optimization*. Simply put, it's a way that the compiler can make a function call without it taking up any additional stack space. In Clojure, we can do that with `loop` and `recur`. Let's refactor our factorial function: 
 
-```
+```clojure
 (defn factorial [n]
   (loop [n n
          acc 1]
@@ -99,7 +99,7 @@ Let's break down what's happening, using an input of 4:
 
 But surely, with all of Clojure's magic, there's a way to do this without recursion? Why yes, yes there is. Actually, there's multiple ways to do it. Here's the first approach that comes to my mind: 
 
-```
+```clojure
 (defn factorial [n]
   (apply * (range 1 (inc n))))
 ```

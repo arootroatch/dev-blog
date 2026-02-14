@@ -23,7 +23,7 @@ To fix this, we decided to handle the recursion on the frontend, saving the issu
 
 The change on the frontend proved a bit trickier. When fetching data in ClojureScript, the data received can only be accessed inside the `go` block where the async take `<!` occurs (see [this previous post](https://arootroatch-blog.vercel.app/fetch-requests-in-clojurescript) for more detail). This data can be saved to an atom to make it accessible to the rest of the application, but there's a catch: there's no guarantee of exactly when that data will be available. This means something like this won't work: 
 
-```
+```clojure
 (ajax/get! "api/fetch-issues" {} #(reset! number-of-issues (:total %)))
 
 (while (> @number-of-isses (count @jira-issues)) 

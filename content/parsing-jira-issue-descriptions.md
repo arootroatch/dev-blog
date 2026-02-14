@@ -19,7 +19,7 @@ In order to easily detect if an issue was newly created, we chose to simply comp
 
 Of course, Jira couldn't make it too easy on us. The description in the API response, rather than being a string, is a vector of maps, wherein each element in the description is a separate map. Every heading, paragraph, code block, and ordered or unordered list is a nested map structure that needs to be parsed. 
 
-```
+```clojure
 :fields {:description {:type "doc",
                        :version 1,
                        :content [{:type "heading",
@@ -46,24 +46,24 @@ With this deeply nested structure, I found the `get-in` function especially usef
 
 For example, each item in a list comes in from Jira like this: 
 
-```
+```clojure
 {:type "orderedList",
  :attrs {:order 1},
  :content [{:type "listItem",
            :content [{:type "paragraph",
                       :content [{:type "text",
-                                 :text "Here’s a numbered list"}]}]}
+                                 :text "Here's a numbered list"}]}]}
 ```
 
 Instead of doing something hard to read, like this: 
 
-```
+```clojure
 (:text (first (:content (first (:content (first (:content ordered-list)))))))
 ```
 
 I could do this: 
 
-```
+```clojure
 (get-in ordered-list [:content 0 :content 0 :content 0 :text])
 ```
 

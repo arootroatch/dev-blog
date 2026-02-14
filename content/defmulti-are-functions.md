@@ -14,7 +14,7 @@ category:
 
 In my tic-tac-toe game, I was using a multimethod `take-turn` to dispatch the different AI levels based on a given level number, one through three. If no number was provided, the function for getting and playing a move from user input was dispatched. The only issue was, I was using a `dispatch-player` function that used a `cond` to decide how to call the multimethod for it dispatch properly. Take a look: 
 
-```
+```clojure
 (ns tic.tac.toe.main)
 
 (defn- dispatch-player [first-ai-level second-ai-level board player mode]
@@ -40,7 +40,7 @@ I realized that the reason I had this gross conditional to begin with was becaus
 
 All that to say, that means I could tweak the `dispatch-player` function a little and move it to use as the dispatching function in `take-turn`. Take a peek:
 
-```
+```clojure
 (ns tic.tac.toe.player)
 
 (defn- dispatch-player [{:keys [player mode first-ai-level second-ai-level]}]

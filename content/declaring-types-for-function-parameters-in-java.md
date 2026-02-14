@@ -25,7 +25,7 @@ This kind of refactoring has become routine for me in Clojure and JavaScript. Si
 
 Let's start by cleaning up that `measureTimeTaken` function by passing the `add1000Elements` function as an argument. Java provides an interface called `Runnable`, that provides a `run()` method. Using this as the type when declaring the parameter and invoking the `run()` method in the function body makes it possible to pass in functions as arguments. Take a look:
 
-```
+```java
 public static void measureTimeTaken(String message, Runnable function) {
     long startTime, endTime;
     double executionTime;
@@ -43,7 +43,7 @@ With that problem out of the way, it was time tackle the issue of making the `ad
 
 It seemed like Java's static typing was definitely getting in the way of being able to keep my code DRY, but then I remembered: both `MyArrayList` and `MyLinkedList` are implementations of the `MyList` interface! By using that as the type, I could now reuse those functions: 
 
-```
+```java
 public static void add1000ToEnd(MyList<Integer> list) {
     for (int i = 0; i < 1000; i++) {
         list.add(i);

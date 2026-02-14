@@ -3,12 +3,26 @@ import styles from "@/app/blog.module.css";
 import Hero from "@/components/Hero";
 import getPost from "@/lib/getPost";
 import { compileMDX } from "next-mdx-remote/rsc";
+import rehypeHighlight from "rehype-highlight";
+import clojure from "highlight.js/lib/languages/clojure";
+import javascript from "highlight.js/lib/languages/javascript";
+import java from "highlight.js/lib/languages/java";
+import ruby from "highlight.js/lib/languages/ruby";
+import go from "highlight.js/lib/languages/go";
+import css from "highlight.js/lib/languages/css";
+import scss from "highlight.js/lib/languages/scss";
+import python from "highlight.js/lib/languages/python";
+import yaml from "highlight.js/lib/languages/yaml";
+import sql from "highlight.js/lib/languages/sql";
+import xml from "highlight.js/lib/languages/xml";
+import bash from "highlight.js/lib/languages/bash";
 import MyProgressBar from "@/components/ProgressBar";
 import { Frontmatter } from "@/lib/interfaces";
 import PostSidebar from "@/components/PostSidebar";
 import PostScroller from "@/components/PostScroller";
 import getPosts from "@/lib/getPosts";
 import getMostRecentPosts from "@/lib/getMostRecentPosts";
+import parseDate from "@/lib/parseDate";
 import matter from "gray-matter";
 
 export async function generateMetadata({
@@ -54,17 +68,22 @@ export default async function PostPage({
   const markdown = getPost(slug);
   const { content, frontmatter } = await compileMDX<Frontmatter>({
     source: markdown,
-    options: { parseFrontmatter: true },
+    options: {
+      parseFrontmatter: true,
+      mdxOptions: {
+        rehypePlugins: [[rehypeHighlight, { languages: { clojure, javascript, java, ruby, go, css, scss, python, yaml, sql, xml, bash } }]],
+      },
+    },
   });
 
-  const date = new Date(frontmatter.date);
+  const date = parseDate(frontmatter.date);
   const formattedDate = date.toLocaleDateString("en-US", {
     weekday: "long",
     year: "numeric",
     month: "long",
     day: "numeric",
   });
-  const updated = new Date(frontmatter.updated);
+  const updated = parseDate(frontmatter.updated);
   const formattedUpdate = updated.toLocaleDateString("en-US", {
     weekday: "long",
     year: "numeric",

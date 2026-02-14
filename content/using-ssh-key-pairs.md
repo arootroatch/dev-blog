@@ -15,7 +15,7 @@ Secure Shell, or SSH, is a protocol for connecting to another computer via their
 
 The simplest way to SSH into a computer is to simply type the username of the account you wish to log in with and the IP address of the box, like so:
 
-```
+```bash
 ssh <username>@<ip_address>
 ```
 
@@ -31,7 +31,7 @@ Using key pairs enables us to disable password login entirely, locking down the 
 
 On Mac and Linux, creating a new SSH key is easy using the `ssh-keygen` terminal command. 
 
-```
+```bash
 ssh-keygen -t ed25519 -C username@email.com
 ```
 

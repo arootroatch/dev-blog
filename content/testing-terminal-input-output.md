@@ -22,7 +22,7 @@ That's where `with-in-str` and `with-out-str` come in.
 
 By wrapping the body of our test in `with-in-str`, we can get our test to simulate user input for us. For example: 
 
-```
+```clojure
  (it "plays first cell"
       (with-in-str "1"
         (let [result (play-move empty-board :x)]
@@ -35,11 +35,11 @@ The `play-move` function first calls a `read-move` function that will wait for u
 
 What if we need two inputs from the user? Say, for example, we want to test our error handling for when the user enters an invalid input, like a number outside 1-9, a letter, or the number of a cell that's already taken. That's where the newline `\n` character comes in. For example: 
 
-```
+```clojure
 (it "plays a non-numeric move"
       (let [result (with-in-str "blah\n3" (play-move empty-board :o))]
         (should= [1 2 :o 4 5 6 7 8 9] result)))
-        
+
 ```
 
 Now, our test will enter in "blah" as the user, which will be rejected and trigger a recursion. Then it will enter "3" and check to see that the third cell in the vector now has an `:o`. 
@@ -48,7 +48,7 @@ Now, our test will enter in "blah" as the user, which will be rejected and trigg
 
 Now that we've covered user input, what about testing things that we want to print to the terminal? We can let our tests know to expect a string to be printed to the terminal with `with-out-str`.
 
-```
+```clojure
 (it "O plays one of X's already played cells"
       (let [board (assoc empty-board 0 :x)
             message (with-out-str (with-in-str "1\n2" (play-move board :o)))
@@ -63,7 +63,7 @@ Here, we want to make sure we are printing an error message if the user enters a
 
 For using `println`, `with-in-str` and `with-out-str` are all we need. But if we need to test output that isn't a string, that's not going to work. For demonstration, we'll stick with printing to the console in this example. 
 
-```
+```clojure
 (it "prints the board to the terminal"
       (with-redefs [println (stub :printer)]
         (print-board [1 :x 3 4 :o 6 :o 8 9])

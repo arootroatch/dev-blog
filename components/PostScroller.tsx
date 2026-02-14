@@ -4,6 +4,7 @@ import styles from "@/components/postScroller.module.css";
 import {Posts, PostScrollerProps} from "@/lib/interfaces";
 import Link from "next/link";
 import {useState} from "react";
+import parseDate from "@/lib/parseDate";
 
 
 export default function PostScroller({title, category, allPostsButton, id, count}: PostScrollerProps) {
@@ -35,8 +36,8 @@ export default function PostScroller({title, category, allPostsButton, id, count
   }
 
   function sortByDate(a: Posts, b: Posts) {
-    const date1 = new Date(a.data.date).getTime();
-    const date2 = new Date(b.data.date).getTime();
+    const date1 = parseDate(a.data.date).getTime();
+    const date2 = parseDate(b.data.date).getTime();
 
     return date2 - date1;
   }

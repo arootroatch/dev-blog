@@ -15,7 +15,7 @@ One of my favorite uses for threading macros lately has been being able to build
 especially useful in nested maps, since `assoc-in` doesn't work with multiple key-value pairs at once in the same way
 that `assoc` does, and ways to do it in one line of code can be hard to follow.
 
-```
+```clojure
 (-> issue
     (assoc-in [:fields :created] created-time)
     (assoc-in [:fields :updated] updated-time))
@@ -35,7 +35,7 @@ story when it shouldn't have been updated at all.
 
 Syntactically, the conditional threading macro looks almost identical to `cond`:
 
-```
+```clojure
 (cond-> {}
         summary     (assoc :summary summary)
         description (assoc :description description)

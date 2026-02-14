@@ -20,7 +20,7 @@ In this article I will be focusing specifically on all the cool features that Cu
 
 Slurping takes code that is adjacent it to code that's inside parentheses, curly braces, square brackets, or double quotes, and pulls it into that form. This can be done both forwards and backwards. Consider this line of code: 
 
-```
+```clojure
 (println) (score board)
 ```
 
@@ -32,7 +32,7 @@ If our cursor is over `(score board)` and we slurp backwards, it will pull `(pri
 
 Yes, it's actually called barfing, because slurping wasn't amusing enough already. This does the opposite of slurping, and it also can be done forwards or backwards. Let's use the last example of slurping backwards and pulling `(println)` inside of `(score board)` by accident.
 
-```
+```clojure
 ((println) score board)
 ```
 
@@ -58,7 +58,7 @@ It does seem strange, though, that they trade letters for backwards instead of o
  
 The last nifty keyboard trick that Cursive gives us is threading and unthreading nested code. Take a look at this code for solving problem eight of the Euler project: 
 
-```
+```clojure
 (defn euler-8 [n]
   (->> thousand-digit-number
        (create-vector-of-digits)
@@ -69,7 +69,7 @@ The last nifty keyboard trick that Cursive gives us is threading and unthreading
 ```
 Unthread form will revert our threading back to a normal nested structure on layer of parentheses at a time, starting with the outer. So the first time, it will wrap our entire form around `(last)`, then wrap it all around `(sort)` but keep last on the outside, until we have: 
 
-```
+```clojure
 (defn euler-8 [n]
   (last (sort < (map #(reduce * %) (partition n 1 (create-vector-of-digits thousand-digit-number))))))
 ```

@@ -21,7 +21,7 @@ Thankfully, there are two keywords that allow us to write concrete methods insid
 
 A default method in an interface is a method that all the implementing classes will have access to. There is no need to implement or import the method before using it inside the class; it will automatically be inherited in the class when implementing the interface. For example: 
 
-```
+```java
 public interface Vehicle {
     default void drive(){
         System.out.println("Driving");

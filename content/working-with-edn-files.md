@@ -16,7 +16,7 @@ category:
 
 To read an EDN file into memory, `slurp` reads the contents of a file and returns the contents as a string. To parse this back to usable Clojure, there's `clojure.edn/read-string`. However, this will only return the first object in the string, so if the file contains multiple maps or vectors rather than being nested in one large vector, only the first map will be returned. To get around this, I found creating a string version of a vector out of the contents of `slurp` to be handy, like this: 
 
-```
+```clojure
 (defn read-edn-file [path]
   (clojure.edn/read-string (str \[ (slurp path) \])))
 ```
@@ -33,7 +33,7 @@ Files can be deleted from the repository using `clojure.java.io/delete-file`.
 
 One of my stories for this week is to add file persistence to tic-tac-toe in a way that stores all the moves of the game and allows a player to resume the game if they exited before completing it. I wanted the log file to have the following structure, one map for each game:
 
-```
+```clojure
 {:game-id 4
  :game-state :in-progress
  :ui :gui
@@ -58,7 +58,7 @@ Even if there was a way to save upon exit, it still left me with the conundrum o
 
 Instead, I decided to create a subdirectory for in-progress game logs and use `spit` to create a new file for each game. The top of the file is a map of the game state, like the one above without the `:moves` key-value pair. Each move is then be written to the file when it was made using `:append true`. Then, if the game is completed, the file is read into memory and the data is formatted into one map as shown above. That data is then written to the one log file of all the completed games using `:append true`, and the game-specific file is then deleted from the repository to keep things clean. Here's the code for the re-format, append, and delete:
 
-```
+```clojure
 (defn format-in-progress-data [path]
   (let [data (read-edn-file path)
         moves (rest data)

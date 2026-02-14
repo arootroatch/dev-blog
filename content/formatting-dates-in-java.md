@@ -25,14 +25,14 @@ the `SimpleDateFormat` constructor.
 
 For example:
 
-```
+```java
 String pattern = "yyyy-MM-dd HH:mm:ss";
 SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 ```
 
 Now with a date format defined, we can create a new date object that is formatted with this pattern:
 
-```
+```java
 String myDate = simpleDateFormat.format(new Date());
 ```
 
@@ -166,7 +166,7 @@ I found this handy table in [Digital Ocean's blog](https://www.digitalocean.com/
 
 We can provide a second argument to the `SimpleDateFormat` constructor to specify the language and country of our date string: 
 
-```
+```java
 String pattern = "yyyy-MM-dd HH:mm:ss";
 SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern, new Locale("es", "ES"));
 ```
@@ -179,7 +179,7 @@ Locales are a combination of the [ISO 639-1](https://en.wikipedia.org/wiki/ISO_6
 
 We can also turn strings into date objects with `simpleDateFormat.parse()`. In addition to providing a string to be parsed,  we still need to provide a pattern string so the method knows how to parse the string. For example: 
 
-```
+```java
 String pattern = "yyyy-MM-dd HH:mm:ss";
 SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 Date date = simpleDateFormat.parse("2024-08-20 13:57:32");

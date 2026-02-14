@@ -40,7 +40,7 @@ Let's take a deeper look.
 It's very common in Reagent to use an inner function for rendering a component when dealing with internal state. To
 borrow an example from Reagent's documentation:
 
-```
+```clojure
 (defn timer-component []
   (let [seconds-elapsed (r/atom 0)]
     (fn []
@@ -53,8 +53,8 @@ every re-render. Without the inner function, the atom would be re-initialized to
 wouldn't work! However, we can leverage `with-let` to only evaluate the binding when the component mounts and eliminate
 the need for the inner function:
 
-```
-(defn timer-component [] 
+```clojure
+(defn timer-component []
   (r/with-let [seconds-elapsed (r/atom 0)]
     (js/setTimeout #(swap! seconds-elapsed inc) 1000)
     [:div "Seconds Elapsed: " @seconds-elapsed]))
@@ -67,7 +67,7 @@ when adding event listeners that need to be removed when the component no longer
 we have a button that renders a `div` container, and we want to close either when the button is clicked or when we
 simply click outside the container. With classes, that looks like this:
 
-```
+```clojure
 (defn open-close-class-component []
   (let [open?   (r/atom false)
         handler (partial on-click open?)]
@@ -84,7 +84,7 @@ simply click outside the container. With classes, that looks like this:
 I don't know about you, but seeing this kind of Object-Oriented React in my ClojureScript makes me cringe. Instead, we
 can do this:
 
-```
+```clojure
 (defn open-close-class-component []
   (r/with-let [open?   (r/atom false)
                handler (partial on-click open?)
@@ -102,8 +102,8 @@ that's clean!
 
 Let's re-visit our timer example for a minute.
 
-```
-(defn timer-component [] 
+```clojure
+(defn timer-component []
   (r/with-let [seconds-elapsed (r/atom 0)]
     (js/setTimeout #(swap! seconds-elapsed inc) 1000)
     [:div "Seconds Elapsed: " @seconds-elapsed]))
@@ -112,7 +112,7 @@ Let's re-visit our timer example for a minute.
 For those used to thinking in terms of React class components, this might look strange. The side-effect-inducing
 `js/setTimeout` appears to be being called from inside the render function, like this:
 
-```
+```clojure
 (defn timer-component []
   (let [seconds-elapsed (r/atom 0)]
     (r/create-class
@@ -120,8 +120,8 @@ For those used to thinking in terms of React class components, this might look s
        (fn []
          (js/setTimeout #(swap! seconds-elapsed inc) 1000)
          [:div "Seconds Elapsed: " @seconds-elapsed])})))
-         
-; NOT what is actually happening! 
+
+; NOT what is actually happening!
 ```
 
 This, of course, is a huge violation of the best practice of render functions always being pure functions. Having side
@@ -132,7 +132,7 @@ what is returned from the function is what is rendered. Remember that ClojureScr
 the last form in the function is, that is what gets rendered. `js/setTimeout` is never returned from the function, so
 it's not polluting the renderer. The class component equivalent would be this:
 
-```
+```clojure
 (defn timer-component []
   (let [seconds-elapsed (r/atom 0)]
     (r/create-class
@@ -151,8 +151,8 @@ is evaluated everytime the component renders, so it functions as both `:componen
 only using `:component-did-mount`. If we want it to act like `:component-did-update` and run on all subsequent
 re-renders but *not* on the initial render, a simple conditional check against the internal state suffices:
 
-```
-(defn timer-component [] 
+```clojure
+(defn timer-component []
   (r/with-let [seconds-elapsed (r/atom 0)
                inc-timer       (fn [] (js/setTimeout #(swap! seconds-elapsed inc) 1000))]
     (when (> @seconds-elapsed 0) (inc-timer))
@@ -188,8 +188,8 @@ function components, I've decided to show what these same examples would look li
 
 Reagent example:
 
-```
-(defn timer-component [] 
+```clojure
+(defn timer-component []
   (r/with-let [seconds-elapsed (r/atom 0)]
     (js/setTimeout #(swap! seconds-elapsed inc) 1000)
     [:div "Seconds Elapsed: " @seconds-elapsed]))
@@ -197,7 +197,7 @@ Reagent example:
 
 JavaScript React example:
 
-```
+```javascript
 export default function timerComponent() {
     const [secondsElapsed, setSecondsElapsed] = useState(0);
 
@@ -220,8 +220,8 @@ export default function timerComponent() {
 
 Reagent example:
 
-```
-(defn timer-component [] 
+```clojure
+(defn timer-component []
   (r/with-let [seconds-elapsed (r/atom 0)
                _               (js/setTimeout #(swap! seconds-elapsed inc) 1000)]
     [:div "Seconds Elapsed: " @seconds-elapsed]))
@@ -229,16 +229,16 @@ Reagent example:
 
 JavaScript React example:
 
-```
+```javascript
 export default function timerComponent() {
     const [secondsElapsed, setSecondsElapsed] = useState(0);
 
     useEffect(() => {
         setTimeout(setSecondsElapsed(secondsElapsed + 1), 1000);
-        
-        // empty dependency array tells React to run 
+
+        // empty dependency array tells React to run
         // useEffect() only on initial mount
-    }, []) 
+    }, [])
 
     return (
         <div>
@@ -252,8 +252,8 @@ export default function timerComponent() {
 
 Reagent example:
 
-```
-(defn timer-component [] 
+```clojure
+(defn timer-component []
   (r/with-let [seconds-elapsed (r/atom 0)
                inc-timer       (fn [] (js/setTimeout #(swap! seconds-elapsed inc) 1000))]
     (when (> @seconds-elapsed 0) (inc-timer))
@@ -263,7 +263,7 @@ Reagent example:
 
 JavaScript React example:
 
-```
+```javascript
 export default function timerComponent() {
     const [secondsElapsed, setSecondsElapsed] = useState(0);
 
@@ -273,11 +273,11 @@ export default function timerComponent() {
 
     useEffect(() => {
         // conditional check prevents running on initial mount
-        if (secondsElapsed > 0) incTimer(); 
-        
-        // dependency array tells React to run useEffect() 
+        if (secondsElapsed > 0) incTimer();
+
+        // dependency array tells React to run useEffect()
         // everytime secondsElapsed changes
-    }, [secondsElapsed]) 
+    }, [secondsElapsed])
 
     return (
         <div>

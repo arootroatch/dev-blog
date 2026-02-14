@@ -26,8 +26,8 @@ Next was figuring out how to do this as the result of a terminal command without
 
 To get this working, I first needed to make `-main` take an argument, otherwise passing an argument to `lein run` would result in an "incorrect arity" error. To allow for a variety of argument counts to be passed in, I added a variadic parameter `[&args]`. Now if I type `lein run gui`, the value of `&args` will be the string `"gui"`. This now means I can add this to `-main`:
 
-```
-(let [gui (if (= "gui" &args) 
+```clojure
+(let [gui (if (= "gui" &args)
             (do (load-file [filepath as string]) true) 
             false)] [fn body])
 ```

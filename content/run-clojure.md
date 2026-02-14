@@ -14,7 +14,7 @@ category:
 
 The diamond kata is a fun coding challenge that involves creating a function that creates a diamond with letters up to the given letter. For example:
 
-```
+```text
 (print-diamond "D")
 
     A
@@ -34,11 +34,11 @@ The first part is relatively easy: the amount of leading spaces to put the "A" i
 The second part is a little trickier: the number of spaces between each letter is 1 for the B's, 3 for the C's, and 5 for the D's. For more letters, we would continue up the sequence of odd numbers. To do this programmatically, we can consider each line as an index, with the A's being line 0, the B's being line 1, and so on. This approach works well when using a vector to store all the letters of the alphabet, where index 0 is A. Then, take that number, subtract one, and add it to the original number. So for the C's being line 2, 2 + (2-1) = 3. For the D's, 3 + (3-1) = 5.
 
 For actually printing the diamond, I started off wanting to use `println` for every line of the diamond. That might be okay for a small diamond, but if were to enter in "Z" as our argument, we would invoke `println` 51 times! With some quick experimenting in the REPL, though, I found out that `println` parses new line characters `\n` as line breaks instead of simply printing the character. For example:
-```
+```clojure
 (println " A\nB B\n A")
  A
 B B
- A 
+ A
 ```
 That's much friendlier than invoking `println` for every line of the diamond.
 

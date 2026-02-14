@@ -17,7 +17,7 @@ That's where streams come in. Introduced in Java 8, streams gives us a wrapper f
 
 To turn a list into a stream, we simply call the `stream()` method on it. To turn an array into a stream, we wrap it in `Arrays.stream`.
 
-```
+```java
 myList.stream();
 
 Arrays.stream(myArray);

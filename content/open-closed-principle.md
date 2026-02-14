@@ -51,35 +51,35 @@ While originally created with Object-Oriented languages in mind, this design pri
 
 Say we have a coffee-bot function that, when called, returns “Here’s your coffee!”
 
-```
+```clojure
 user=> (coffee-bot)
-“Here’s your coffee!”
+"Here's your coffee!"
 ```
 
 But what if we want to be able to pass in different brew techniques? For example: 
 
-```
-user=> (coffee-bot “V60”)
-“Here’s your V60 pour over!”
+```clojure
+user=> (coffee-bot "V60")
+"Here's your V60 pour over!"
 ```
 
 We could get it working with a case statement like this:
 
-```
+```clojure
 (defn coffee-bot [brew-method]
     (case brew-method
-        “V60” “Here’s your pourover!”
-        “Here’s your coffee!”))
+        "V60" "Here's your pourover!"
+        "Here's your coffee!"))
 ```
 
 ...but now if we wanted to add Nespresso or Chemex we’d have to go back into the source code for this function and add lines to the case statement, and that violates the Open-Closed Principle. 
 
 Instead, we can use a [multi-method](https://arootroatch-blog.vercel.app/runtime-polymorphism#h2-2). 
 
-```
+```clojure
 (defmulti coffee-bot identity)
-(defmethod coffee-bot :V60 [_] "Here’s your pour over!")
-(defmethod coffee-bot :Nespresso [_] "Here’s your Nespresso!")
+(defmethod coffee-bot :V60 [_] "Here's your pour over!")
+(defmethod coffee-bot :Nespresso [_] "Here's your Nespresso!")
 (defmethod coffee-bot :Mr-Coffee [_] "Here's your drip coffee!")
 ```
 

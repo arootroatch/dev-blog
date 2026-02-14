@@ -32,7 +32,7 @@ sufficient.
 However, SQL only uses single quotes for strings instead of double quotes. That means that when a tie game happens and
 this command runs:
 
-```
+```sql
 UPDATE games SET game_state = 'It's a tie!' WHERE id = 10;
 ```
 

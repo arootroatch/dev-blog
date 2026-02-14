@@ -15,7 +15,7 @@ Recently, I needed to create a `.jar` file from my Java application in order to 
 
 The `jar` command has a lot of options, and there's a lot of information out there about previous versions, so it took some research to figure out the right approach for me. The solution I came up with was: 
 
-```
+```bash
 cd out
 jar -cfe MyHttpServer.jar MyServer.Main .
 ```

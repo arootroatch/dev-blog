@@ -16,7 +16,7 @@ In my journey learning Clojure, I often find myself thinking in terms of how I w
 
 A good example of this is nested `if` statements. Consider this function for returning a boolean if a number is prime:
 
-```
+```clojure
 (defn prime? [number]
   (if (= 1 number)
     false
@@ -39,7 +39,7 @@ A more elegant solution that's more idiomatic to Clojure is to use `cond`. This 
 
 Let's take a look at cleaning up our `prime?` function:
 
-```
+```clojure
 (defn prime? [number]
   (cond (= 1 number) false
         (= 2 number) true
@@ -56,9 +56,9 @@ That is *much* easier to understand.
 
 Using `cond` is very similar to `case`:
 
-```
+```clojure
 (defn prime? [number]
-  (case number 
+  (case number
         1 false
         2 true
         (let [sqrt (Math/sqrt number)

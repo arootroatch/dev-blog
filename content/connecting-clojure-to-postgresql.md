@@ -14,33 +14,33 @@ category: [ SQL, Clojure ]
 This week, I've been working on setting up a locally hosted PostgreSQL database for my tic-tac-toe application. To
 start, I needed to install postgres on my machine, which I installed using homebrew:
 
-```
+```bash
 brew install postgresql
 ```
 
 Then to get it running, I used:
 
-```
+```bash
 brew services start postgresql
 ```
 
 This adds postgres to the services that run whenever my computer is turned on. To start postgres without it always
 running in the background afterward, use:
 
-```
+```bash
 brew services run postgresql
 ```
 
 Then I created one database called `ttt` and another called `ttt-test`, which has all the same columns so that I have
 mock database for testing. This was done with:
 
-```
+```bash
 createdb ttt
 ```
 
 Then to interact with the new database:
 
-```
+```bash
 psql ttt
 ```
 

@@ -23,7 +23,7 @@ Java files have a `.java` extension while compiled Java class files have a `.cla
 
 Here's an example of compiling all the files in the `src` directory and placing the class files in the `out` directory: 
 
-```
+```bash
 javac -d /Users/username/current-projects/my-project/out
 /Users/username/current-projects/my-project/src/*.java
 ```
@@ -40,7 +40,7 @@ In my current project, I'm using a suite of tests that works with Java 21, the n
 
 Thankfully, the Java compiler allows us to target previous versions when we compile using the `--release` option: 
 
-```
+```bash
 javac --release 21 -d /Users/username/current-projects/my-project/out
 /Users/username/current-projects/my-project/src/*.java
 ```
@@ -53,13 +53,13 @@ To execute the compiled code, we use the `java` terminal command (note the lack 
 
 There's one "gotcha" here, though: if we have multiple files, we can't simply call `java out/Main`. We need to tell Java the path at which it can find the rest of the code using the `-cp` or `classpath` option. Once specifying the classpath, we don't need to include the entire filepath when executing `Main`: 
 
-```
+```bash
 java -cp /User/username/current-projects/my-project/out Main
 ```
 
 If you have all of your files in a package inside your source directory, the files will be compiled in a package in your out directory. To execute `Main`, use dot notation: 
 
-```
+```bash
 java -cp /User/username/current-projects/my-project/out MyPackage.Main
 ```
 

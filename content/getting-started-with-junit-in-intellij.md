@@ -40,7 +40,7 @@ Having done a good amount of TypeScript work with React (including developing th
 
 One of the biggest curveballs was not being able to simply type a hashmap. For the Coin Changer Kata, I decided I wanted to return a map where the name of the coin was the key and the number of coins was the value. In both JavaScript and Clojure, I could easily do this by merely typing a pair of curly braces and filling it with my desired key-value pairs. In Java, however, I have to use a constructor function to create the empty hashmap and then fill the hashmap using the `put` method:
 
-```
+```java
 HashMap<String, Integer> coins = new HashMap<String, Integer>();
 coins.put("pennies", 2);
 ```

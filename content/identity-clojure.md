@@ -22,7 +22,7 @@ I like to think of `identity` as the "hot potato" function, because it simply re
 
 For example: 
 
-```
+```clojure
 (defmulti coffee-bot identity)
 (defmethod coffee-bot :V60 [_] "Here’s your pour over!")
 (defmethod coffee-bot :Nespresso [_] "Here’s your Nespresso!")
@@ -34,7 +34,7 @@ As far as we're concerned when calling the function, it takes our keyword just t
 
 To tie that in with [yesterday's post](https://arootroatch-blog.vercel.app/partition), this works great if you want to sort a collection into sub-collections of the same item:
 
-```
+```clojure
 user=> (partition-by identity (sort "abcdaabccc"))
 ((\a \a \a) (\b \b) (\c \c \c \c) (\d))
 ```

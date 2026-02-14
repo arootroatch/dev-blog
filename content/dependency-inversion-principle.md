@@ -28,7 +28,7 @@ When this approach is used, the end result is high-level functions like `main` c
 
 Let's look at a tic-tac-toe example of compile-time dependency.
 
-```
+```clojure
 (defn- dispatch-player [level board player]
   (if (= player :x)
     (play-user-turn board player)

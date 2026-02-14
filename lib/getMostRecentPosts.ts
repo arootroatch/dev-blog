@@ -1,10 +1,11 @@
 import { Posts } from "./interfaces";
+import parseDate from "./parseDate";
 
 export default function getMostRecentPosts(posts: Posts[], amount: number) {
   return posts
     .toSorted(
       (a, b) =>
-        new Date(b.data.updated).getTime() - new Date(a.data.updated).getTime()
+        parseDate(b.data.updated).getTime() - parseDate(a.data.updated).getTime()
     )
     .slice(0, amount);
 }

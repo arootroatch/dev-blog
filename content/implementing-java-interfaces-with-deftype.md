@@ -19,7 +19,7 @@ As Clojure runs on the JVM, it natively supports calling Java methods inside our
 
 The implementation of an interface in Java looks something like this: 
 
-```
+```java
 public interface Command {
   void execute();
 }
@@ -37,8 +37,8 @@ public class MyClass implements Comand {
 
 Implementing this in Clojure looks something like this: 
 
-```
-(ns my-app 
+```clojure
+(ns my-app
     (:import MyJavaApp.Comand))
     
 (deftype MyDeftype []
@@ -52,7 +52,7 @@ Instead of an explicit constructor method, the parameters that would be fed to a
 
 If the execute method takes arguments, we will need to use `this` to implement them so Clojure knows those symbols are coming from the interface being implemented. For example: 
 
-```
+```clojure
 (deftype MyDeftype []
   Command
   (execute [this param1 param2]
@@ -64,13 +64,13 @@ If the execute method takes arguments, we will need to use `this` to implement t
 
 In Java, we create an instance of a class with: 
 
-```
+```java
 MyClass coolClass = new MyClass();
 ```
 
 In Clojure, we can either use a constructor of the factory method that Clojure creates under to hood: 
 
-```
+```clojure
 ;Constructor:
 (def coolDeftype (MyDeftype.))
 
@@ -80,7 +80,7 @@ In Clojure, we can either use a constructor of the factory method that Clojure c
 
 Then to call the `execute` method, we use an interesting blend of Clojure and Java syntax:
 
-```
+```clojure
 (.execute coolDeftype [params])
 ```
 

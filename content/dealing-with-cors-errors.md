@@ -23,13 +23,13 @@ So how does a server tell the browser that a certain domain has permission to it
 
 The "Access-Control-Allow-Credentials" is a boolean that needs to be set to "true" for this to work, because the request is sending along a JWT payload that is also used to verify that the user is indeed an authorized user and only send back the data for that user. 
 
-```
+```text
 "Access-Control-Allow-Credentials": "true"
 ```
 
 The "Access-Control-Allow-Origin" header contains the domain allowed to use this API endpoint. For requests without credentials, a wildcard `*` character can be used to allow requests from any origin.
 
-```
+```text
 "Access-Control-Allow-Origin": "http://requesting-domain.com"
 ```
 

@@ -13,7 +13,7 @@ category: [Clojure]
 
 Recently I've been dealing with a lot of database calls and API calls. Sometimes, I want to be able to put a database call or an API call in a let binding so that I can work with its response in the function body. This can lead to problems, since this will cause the data request to execute before it's needed. For example: 
 
-```
+```clojure
 (defn sync! [epic-story]
   (let [link       (by-epic epic-story)
         jira-issue (delay (epic->jira epic-story))]

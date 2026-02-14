@@ -15,7 +15,7 @@ category:
 At first glance, Clojure seems to have more parentheses than it could possibly need. This is mainly due to the fact the Clojure is a completely functional language, and the way functions are called is by wrapping it in parentheses. *Everything* is a function in Clojure, so *everything* is wrapped in parentheses. Even defining a global variable is a function call in which you pass in the variable name and the value you want to bind to that variable. For example:
 
 
-```
+```clojure
 (def my-name "Alex")
 ```
 
@@ -26,19 +26,19 @@ Here the keyword `def` is being used to define the global variable `my-name` and
 
 At second glance, however, Clojure has a striking *lack* of syntax. Unlike JavaScript, blocks of code aren't surrounded by curly braces, ends of lines aren't marked with semicolons, and commas aren't anywhere to be found in maps or vectors (the equivalent of JavaScript's objects and arrays, respectively). If statements in Clojure are so simple it almost makes the JavaScript ternary operator look verbose: 
 
-```
+```clojure
 (if ready? "I'm ready!" "I'm almost ready!")
 ```
 
 Here, the if statement evaluates the boolean variable `ready?`. If it returns true, the string "I'm ready!" is returned, else "I'm almost ready!" is returned. In JavaScript, the equivalent using the ternary operator (the most succinct method) would look like this: 
 
-```
+```javascript
 ready ? "I'm ready" : "I'm almost ready!"
 ```
 
 Anything more complex than this, and JavaScript adds curly braces, extra lines, and the `else` keyword: 
 
-```
+```javascript
 if (numOfApples > 4) {
   "Let's make a pie!"
 } else {
@@ -48,7 +48,7 @@ if (numOfApples > 4) {
 
 But it stays short and sweet in Clojure: 
 
-```
+```clojure
 (if (> num-of-apples 4) "Let's make a pie!" "We need more apples...")
 ```
 
@@ -66,7 +66,7 @@ All values in Clojure are immutable, meaning they **cannot be changed**. This is
 
 This didn't really trip me up much until I started doing some 4Clojure algorithm exercises. In some array-sorting scenarios in JavaScript, I had found it useful to be able to declare an empty array and then push elements into that empty array as I looped over the original array.  For example, in getting all the even numbers from an array: 
 
-```
+```javascript
 function getEven(arr){
   let evenNums = [];
   arr.forEach((num)=>(
@@ -80,7 +80,7 @@ function getEven(arr){
 
 This approach is not an option in Clojure. Not only that, primitive for loops like `for(let i=0; i<arr.length; i++)` aren't an option in Clojure either since they depend upon the mutability of the variable `i`. Instead, we need to reach for things like `filter`, `map`, or `reduce`. In scenarios where those aren't enough, recursion must be used. I know, I know, "recursion" is a scary word for, meant for only the bravest devs. Thankfully, Clojure has a lot of really cool built-in functions that quickly make our developer lives easier, like `even?` and `odd?`: 
 
-```
+```clojure
 (fn [arr] (filter even? arr))
 ```
 

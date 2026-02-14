@@ -18,14 +18,14 @@ Once I started implementing Quil's `:handle-click` option, I discovered that it 
 
 There was just one small issue, though: `mouse-over?` already had an `x` and `y` parameters, so I couldn't simply destructure the keys from the map that `:handle-click` passes, like this:
 
-```
+```clojure
 (defn mouse-over? [x y w h {:keys [x y]}]
     fn-body)
 ```
 
 I also didn't want to destructure inside the function body if I could avoid it, like this:
 
-```
+```clojure
 (defn mouse-over? [x y w h mouse-xy]
     (let [{mouse-x :x
            mouse-y :y} mouse-xy]
@@ -34,7 +34,7 @@ I also didn't want to destructure inside the function body if I could avoid it, 
 
 With a little bit of playing around in the REPL, I discovered it was possible to declare new bindings while destructuring all inside of the function parameters, like this:
 
-```
+```clojure
 (defn mouse-over? [x y w h {mouse-x :x mouse-y :y}]
     fn-body)
 ```

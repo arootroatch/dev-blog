@@ -48,16 +48,19 @@
   overflow-x: scroll;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #e8ecf0;
+}
+:global(.dark) .main pre code {
+  background-color: #1e2530;
 }
 
-.main code {
+.main :not(pre) > code {
   padding: 0.2rem 0.5rem;
-}
-.main code, .main pre code {
   background-color: #67676729;
   border-radius: 0.5rem;
 }
-:global(.dark) .main code, :global(.dark) .main pre code {
+:global(.dark) .main :not(pre) > code {
   background-color: #8c8c8c32;
 }
 

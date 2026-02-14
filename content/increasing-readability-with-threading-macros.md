@@ -14,16 +14,16 @@ category:
 
 We've all been there: we're reading through some code and come across multiple nested function calls. Taking a deep breath, we grab our ladder and traverse down to the deepest level of parentheses. Slowly, we work our way back up to top-most function call, mentally logging the return values of each function to figure out what the end result of our nested mess will be. Take this for example:
 
-```
-(defn deeply-nest [coll] 
-    (get-in 
-        (update-in 
-            (assoc 
-                (assoc 
-                    (assoc coll :a 1) 
-                    :b 2) 
-                :c {:d 4 :e 5}) 
-            [:c :e] inc) 
+```clojure
+(defn deeply-nest [coll]
+    (get-in
+        (update-in
+            (assoc
+                (assoc
+                    (assoc coll :a 1)
+                    :b 2)
+                :c {:d 4 :e 5})
+            [:c :e] inc)
         [:c :e]))
 
 (deeply-nest {})
@@ -35,7 +35,7 @@ What in the world?! I've indented each line to try to improve readability, an ev
 
 ## Threaded-first
 
-```
+```clojure
  (-> {}
         (assoc :a 1)
         (assoc :b 2)
@@ -63,10 +63,10 @@ You may have noticed that each of those function calls looked like they're missi
 
 But what about functions where the collection needs to be the last argument? That's where we can use *thread-last*, called with `->>`.
 
-```
+```clojure
 (->> [1 2 3]
      (map inc))
-     
+
 use=> [2 3 4]
 ```
 

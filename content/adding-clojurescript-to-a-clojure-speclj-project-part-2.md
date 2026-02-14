@@ -19,14 +19,14 @@ To have a local server, I used [this http-server from http-party](https://github
 
 Once installed, I needed a bash script to start the server and serve the contents of my `resources/public` directory. At the root of my project directory, I added: 
 
-```
+```text
 ├── bin
 │   ├── server
 ```
 
 The server file contained the following bash script: 
 
-```
+```bash
 #! /bin/sh
 
 pushd resources/public
@@ -40,7 +40,7 @@ This will start the server on `localhost:8080` and serve the contents in the `re
 
 However, before this actually worked by calling `bin/server` in the CLI, I needed to add executable permissions to the file: 
 
-```
+```bash
 chmod u=rwx,g=rx,o=r bin/server
 ```
 
@@ -54,7 +54,7 @@ Since we're writing React in Clojure, why not write CSS in Clojure, too?
 
 To start, I needed a place to put my CSS-in-Clojure files. At the root of my project directory, I added:
 
-```
+```text
 ├── dev
 │   ├── ttt
 │   │   ├── styles
@@ -63,7 +63,7 @@ To start, I needed a place to put my CSS-in-Clojure files. At the root of my pro
 
 In `main.clj`, I added: 
 
-```
+```clojure
 (ns ttt.styles.main
   (:refer-clojure :exclude [rem])
   (:require [garden.def :as def]))
@@ -82,7 +82,7 @@ In `main.clj`, I added:
 
 This uses [garden](https://github.com/noprompt/garden?tab=readme-ov-file) to write CSS, just like [hiccup for HTML](https://github.com/weavejester/hiccup). The above code will compile to: 
 
-```
+```css
 body {
     text-align: center;
 }
@@ -92,7 +92,7 @@ body {
 
 Scaffold provides a CSS compiler for Clojure, but it requires a configuration file at the location `resources/config/css.edn.` After creating that file, I added this configuration: 
 
-```
+```clojure
 {
  :source-dir  "dev/ttt/styles"
  :var         ttt.styles.main/screen
@@ -104,13 +104,13 @@ Scaffold provides a CSS compiler for Clojure, but it requires a configuration fi
 
 This tells Scaffold where to find the Clojure files that need to be compiled and where to put the resulting `.css` file. This resulting file needs to be brought into the app in the `index.html`, so in the `<head>` of the `index.html`, I added:
 
-```
+```html
 <link type="text/css" rel="stylesheet" href="/css/ttt.css"/>
 ```
 
 Then in `deps.edn`, I added an alias for calling `scaffold.css`: 
 
-```
+```clojure
 :aliases {:css  {:main-opts ["-m" "c3kit.scaffold.css"]}}
 ```
 
@@ -131,7 +131,7 @@ Wouldn't it be great if it was all one command?
 
 To achieve that, in `dev/ttt` I added `dev.clj` with the following code: 
 
-```
+```clojure
 (ns ttt.dev
   (:require [c3kit.apron.log :as log]
             [c3kit.scaffold.cljs :as cljs]
@@ -167,7 +167,7 @@ To achieve that, in `dev/ttt` I added `dev.clj` with the following code:
 
 This will start each of those tasks in their own thread. To call this file, I added two more aliases to `deps.edn`: 
 
-```
+```clojure
 :aliases {
          :dev  {:main-opts ["-m" "ttt.dev"]}
          :dev- {:main-opts ["-m" "ttt.dev" "cljs" "css"]}
